@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import { parsePx } from '../../../utils/element.js'
 
 // #! 编辑状态，不可以点击的按钮，因为点击按钮会触发一些默认行为，比如表单提交等
@@ -19,6 +20,7 @@ const defaultStyle = {
 class Element {
   constructor (ele) {
     this.name = ele.name
+    this.pluginType = ele.name
     this.uuid = ele.uuid || +new Date()
     /**
      * #!zh:
@@ -31,10 +33,22 @@ class Element {
      * 3. 为何需要 clone，因为会有 element.clone() 以及 page.clone()，
      *    element.pluginProps 和 elementcommonStyle 是引用类型，如果不做 deep_clone 可能会出现意外错误
      */
-    this.pluginProps = (typeof ele.pluginProps === 'object' && cloneObj({ ...ele.pluginProps, uuid: this.uuid })) || this.getDefaultPluginProps(ele.props || {})
-    this.commonStyle = (typeof ele.commonStyle === 'object' && cloneObj(ele.commonStyle)) || { ...defaultStyle, zindex: ele.zindex }
-    this.events = []
+    this.pluginProps = (typeof ele.pluginProps === 'object' && cloneObj({ ...ele.pluginProps, uuid: this.uuid })) ||
+                        this.getDefaultPluginProps(ele.props || {})
+    this.commonStyle = (typeof ele.commonStyle === 'object' && cloneObj(ele.commonStyle)) ||
+                        { ...defaultStyle, zindex: ele.zindex }
+    this.methodList = ele.methodList || []
+    /**
+      script item<{
+        id,
+        label,
+        value
+      }>
+     */
+    this.scripts = ele.scripts || []
     this.animations = ele.animations || []
+
+    this.registerGlobalComponent()
   }
 
   // init prop of plugin
@@ -128,6 +142,39 @@ class Element {
         left: this.commonStyle.left + 20
       }
     })
+  }
+
+  getEventHandlers () {
+    const Ctor = Vue.component(this.name + this.uuid)
+    const vm = new Ctor()
+    const handlers = this.methodList.reduce((handlers, method) => {
+      // bind is fine too：handlers[method.type] = vm[method.name].bind(vm, method.arguments)
+      handlers[method.type] = () => vm[method.name].apply(vm, method.arguments)
+      return handlers
+    }, {})
+    return handlers
+  }
+
+  registerGlobalComponent () {
+    const basePlugin = Vue.component(this.name)
+    const mixinList = this.scripts.map(script => new Function(script.value.replace('editorMethods', 'methodsConfig'))())
+    var pluginWithMixins = mixinList.reduce((a, b) => a.extend(b), basePlugin)
+    Vue.component(this.name + this.uuid, pluginWithMixins)
+  }
+
+  /**
+   *
+   * @param {Object} script <{
+      id,
+      label,
+      value: `return { created() {} }`
+    }>
+   */
+  mixinScript (script) {
+    const basePlugin = Vue.component(this.name + this.uuid)
+    const mixin = new Function(script.value)()
+    const pluginWithMixins = basePlugin.mixin(mixin)
+    Vue.component(this.name + this.uuid, pluginWithMixins)
   }
 }
 

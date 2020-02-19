@@ -1,3 +1,13 @@
+/*
+ * @Author: ly525
+ * @Date: 2020-02-09 15:22:36
+ * @LastEditors: ly525
+ * @LastEditTime: 2020-02-09 15:27:48
+ * @FilePath: /luban-h5/front-end/h5/src/components/plugins/lbp-button.js
+ * @Github: https://github.com/ly525/luban-h5
+ * @Description: Do not edit
+ * @Copyright 2018 - 2019 luban-h5. All Rights Reserved
+ */
 // https://github.com/luban-h5-components/plugin-common-props
 import commonProps from '@luban-h5/plugin-common-props'
 

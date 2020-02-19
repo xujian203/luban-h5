@@ -754,12 +754,13 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@luban-h5/lbc-button@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@luban-h5/lbc-button/-/lbc-button-0.0.2.tgz#76a2d2567eacc31ab8faa8dcff7fa0dd5202512b"
-  integrity sha512-IzSTxhh9wKExvZklvD4QR6pJu1aBil8lw/B0XzSg+OVfSczXi+tbP1CNWNXmlZHf5pIKfiONIanVB0pkW+j6QA==
+"@luban-h5/lbc-button@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@luban-h5/lbc-button/-/lbc-button-0.0.3.tgz#6d92f8d41fadb8a2457eec9b1decb0765a469f04"
+  integrity sha512-X9Vs3r2twDioLndbxGEXW3D17g4/VLwNWUH7ZXUQHkyNSfEZ4t3+9GcUdz94oZjnAGz4wG2Hvk3/bVLvxyJz4A==
   dependencies:
     "@luban-h5/lbs-text-align" "^0.0.3"
+    "@luban-h5/plugin-common-props" "^0.0.1"
     ant-design-vue "^1.2.4"
     core-js "^3.3.2"
     font-awesome "4.7.0"
@@ -785,6 +786,11 @@
   dependencies:
     core-js "^3.3.2"
     vue "^2.6.10"
+
+"@luban-h5/plugin-common-props@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@luban-h5/plugin-common-props/-/plugin-common-props-0.0.1.tgz#10fe5d5b2dda1db64912b3b99779aec60b5ea956"
+  integrity sha512-D8UEBht2BCJt8YDHqcYj0hQmn3WM3QdX3Rw8eaZP02o0NeNe2oDPKE4mCM3eN9U1ygcrDf9bR48RB9YgHJRHGA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -7076,6 +7082,18 @@ moment@^2.21.0:
   resolved "https://registry.npm.taobao.org/moment/download/moment-2.24.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmoment%2Fdownload%2Fmoment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
 
+monaco-editor-webpack-plugin@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/monaco-editor-webpack-plugin/download/monaco-editor-webpack-plugin-1.9.0.tgz#5b547281b9f404057dc5d8c5722390df9ac90be6"
+  integrity sha1-W1Rygbn0BAV9xdjFciOQ35rJC+Y=
+  dependencies:
+    loader-utils "^1.2.3"
+
+monaco-editor@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.npm.taobao.org/monaco-editor/download/monaco-editor-0.20.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmonaco-editor%2Fdownload%2Fmonaco-editor-0.20.0.tgz#5d5009343a550124426cb4d965a4d27a348b4dea"
+  integrity sha1-XVAJNDpVASRCbLTZZaTSejSLTeo=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -10584,6 +10602,11 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-matomo@^3.13.0-2:
+  version "3.13.0-4"
+  resolved "https://registry.npm.taobao.org/vue-matomo/download/vue-matomo-3.13.0-4.tgz#413928de681407a9b3dcab97a6c1eaa6f142b6c3"
+  integrity sha1-QTko3mgUB6mz3KuXpsHqpvFCtsM=
 
 vue-quill-editor@^3.0.6:
   version "3.0.6"

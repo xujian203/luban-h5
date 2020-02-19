@@ -2,13 +2,14 @@
  * @Author: ly525
  * @Date: 2019-12-14 22:43:55
  * @LastEditors: ly525
- * @LastEditTime : 2020-01-15 08:35:17
+ * @LastEditTime: 2020-03-18 23:37:20
  * @FilePath: /luban-h5/front-end/h5/vue.config.js
  * @Github: https://github.com/ly525/luban-h5
  * @Description: Do not edit
  * @Copyright 2018 - 2019 luban-h5. All Rights Reserved
  */
 const path = require('path')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 // const isProd = process.env.NODE_ENV === 'production'
 const target = 'http://localhost:1337'
 const engineOutputDir = path.join(__dirname, '../../back-end/h5-api/public/engine-assets')
@@ -29,9 +30,11 @@ switch (process.env.PAGE) {
       template: 'public/index.html',
       filename: 'index.html',
       title: 'Index Page',
-      // outputDir: 'dist',
-      outputDir: editorBuildOutputDir
+      outputDir: editorBuildOutputDir,
       // publicPath: isProd ? '/main/' : '/'
+      plugins: [
+        new MonacoWebpackPlugin()
+      ]
     }
 }
 
@@ -40,7 +43,8 @@ const configureWebpack = {
     alias: {
       '@': path.join(__dirname, 'src')
     }
-  }
+  },
+  plugins: page.plugins || []
 }
 
 module.exports = {

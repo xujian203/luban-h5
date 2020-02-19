@@ -199,7 +199,7 @@ export default {
                     this.bindContextMenu(e)
                   }}
                 >
-                  {h(element.name, data)}
+                  {h(element.name + element.uuid, data)}
                 </Shape>
               )
             })

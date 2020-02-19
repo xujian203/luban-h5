@@ -5,6 +5,7 @@
 @import url("./shortcut-btn.scss");
 @import url("./page-manager.scss");
 @import url("./canvas-wrapper.scss");
+@import url("./script-panel.scss");
 
 #luban-editor-layout,
 #luban-work-manager-layout  {
@@ -50,6 +51,16 @@
     color: #aaa;
     padding: 4px;
   }
+  // .action-steps-wrapper {
+  //   .ant-timeline-item {
+  //     height: 60px;
+  //   }
+  //   .ant-timeline-item-content span:first-child {
+  //     display: inline-block;
+  //     margin-right: 10px;
+  //     min-width: 100px;
+  //   }
+  // }
 }
 
 .ant-tabs-nav .ant-tabs-tab {

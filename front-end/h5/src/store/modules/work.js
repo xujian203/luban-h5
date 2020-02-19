@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import Element from '../../components/core/models/element'
 import strapi from '../../utils/strapi'
 import Page from '../../components/core/models/page'
@@ -65,6 +66,7 @@ export const actions = {
   },
   fetchWork ({ commit, state }, workId) {
     return strapi.getEntry('works', workId).then(entry => {
+      // commit('registerGlobalComponents', entry)
       commit('setWork', entry)
       commit('setEditingPage')
     })
@@ -258,6 +260,44 @@ export const mutations = {
       return new Page(page)
     })
     state.work = work
+  },
+  registerGlobalComponents (state, work) {
+    window.__work = work
+    work.pages.forEach(page => {
+      page.elements.forEach(element => {
+        const basePlugin = Vue.component(element.name)
+        /**
+          const mixinList = [
+           `return {
+             created () {
+               console.log('mixin script 1: 事件统计追踪/PV/UV(event tracking)')
+             }
+           }`,
+           `return {
+             created () {
+               console.log('mixin script 2: ajax 拉取表格组件所需数据(fetch data with ajax)')
+             }
+           }`,
+           `return {
+             created () {
+               console.log('mixin script 3: TODO')
+             }
+           }`
+         ].map(script => new Function(script)())
+         */
+        const mixinList = element.scripts.map(script => new Function(script)())
+        var pluginWithMixins = mixinList.reduce((a, b) => a.extend(b), basePlugin)
+
+        // const mixin = new Function(script.value)()
+        // const pluginWithMixins = editingPlugin.mixin({
+        //   name: pluginName,
+        //   ...mixin
+        // })
+        // TODO 这边不能这样做，会污染最原始的组件，应该以每个组件的 id 作为一个组件
+        // Vue.component(pluginName, pluginWithMixins)
+        Vue.component(element.name + element.uuid, pluginWithMixins)
+      })
+    })
   },
   previewWork (state, { type, value }) {},
   deployWork (state, { type, value }) {},
