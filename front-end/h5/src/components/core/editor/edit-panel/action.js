@@ -16,7 +16,7 @@ export default {
     currentMethod: {
       name: '',
       arguments: [],
-      type: 'click'
+      trigger: 'click'
     }
   }),
   computed: {
@@ -29,31 +29,73 @@ export default {
       'setEditingElement' // -> this.foo()
     ]),
     /**
-     * @returns {Array} methodList Demo:[
-      {
-        label: '跳转',
-        name: 'handleRedirect',
-      },
-      {
-        label: '点击打点统计'
-        name: 'trackClick',
-      }]
+     *
+     * 元素对应的Vue实例vm 格式化之后的全部 method
+     *
+     *
+     * @returns { Array<Object> }
+      [
+        {
+          name: 'handleRedirect',
+          label: '点击跳转',
+          trigger: 'click',
+          arguments: ['http', 'www.baidu.com'],
+          isAdded: true, // 是否已经绑定到元素上
+        },
+        {
+          name: 'trackClick',
+          label: '点击打点'
+          trigger: 'mouseover',
+          arguments: [],
+          isAdded: true,
+        },
+        {
+          name: 'trackClick',
+          label: '鼠标悬浮',
+          trigger: 'mouseover',
+          arguments: [],
+          isAdded: false,
+        }
+      ]
+      *
+      * vm: 获取 baseComponent.mixin([script1, script2]) 之后，元素对应的 Vue实例
+      * addedMethods: 已经绑定到元素上的 method 列表
+      * addedMethods: [
+          {
+            clickFn: {
+              name: 'clickFn',
+              trigger: 'click',
+              arguments: []
+            }
+          }
+        ]
+      *
+      * vm.$options.methods: 所有methods
+      * vm.$options.methodsConfig: methods 对应的配置
+      *
      */
     getAvailableMethods () {
       const vm = this.getEditingElementVM()
-      const addedMethodsObj = this.editingElement.methodList.reduce((obj, method) => { obj[method.name] = method; return obj }, {})
-      const { methods, methodsConfig = {} } = vm.$options
-      return Object.keys(methods).map(name => ({
-        ...addedMethodsObj[name], // ...{ name, type, arguments }
-        /**
-         * 需要处理 methodsConifg 为空的情况（即用户没有配置 methodsConfig 或者 忘记配置了<哈哈>)
-         * 1. 确认 methodsConfig[name] 存在
-         * 2. 不存在，则设置 label 为 name
-         */
-        label: methodsConfig[name] && (methodsConfig[name].label || name),
-        isAdded: !!addedMethodsObj[name] // 是否已经被选中
-      }))
+      const addedMethods = this.editingElement.methodList.reduce((obj, method) => ({ ...obj, [method.name]: method }), {})
+      const { methods = {}, methodsConfig = {} } = vm.$options
+
+      // methods: { methodA: () => {}, methodB: () => {}, methodC: () => {} }
+      return Object.keys(methods).map(name => {
+        const addedMethod = addedMethods[name] // { name, trigger, arguments }
+        const methodConfig = methodsConfig[name]
+        return {
+          ...(addedMethod || { name, trigger: 'click', arguments: [] }),
+          /**
+             * 处理 methodConifg 不存在（即用户没有配置 methodsConfig 或者 忘记配置了<哈哈>)
+             */
+          label: methodConfig && (methodConfig.label || name),
+          isAdded: !!addedMethod // 是否已经被选中
+        }
+      })
     },
+    /**
+     * 获取元素对应 Vue 实例
+     */
     getEditingElementVM () {
       const name = this.editingElement.name + this.editingElement.uuid
       const Ctor = this.$options.components[name]
@@ -73,6 +115,13 @@ export default {
       })
       return this.codeEditor
     },
+    /**
+     *
+     * @param {Object} script <{ label, value // script content string }>
+     */
+    mixinScript (script) {
+      this.editingElement.mixinScript(script)
+    },
     renderSelectActions (h) {
       const methodList = this.getAvailableMethods()
       const addedMethods = methodList.filter(item => item.isAdded)
@@ -82,7 +131,7 @@ export default {
         <a-timeline class="action-steps-wrapper">
           <a-timeline-item>
             <div>1.选择事件类型</div>
-            <a-select style="width: 160px" onChange={(value) => { this.currentMethod.type = value }} placeholder="事件类型">
+            <a-select style="width: 160px" onChange={(value) => { this.currentMethod.trigger = value }} placeholder="事件类型">
               <a-select-option value="click">点击</a-select-option>
             </a-select>
           </a-timeline-item>
@@ -124,14 +173,18 @@ export default {
       if (!method.name) return
       const vm = this.getEditingElementVM()
       // eslint-disable-next-line no-unused-vars
-      const methodParams = vm.$options.methodsConfig[method.name].params
+      const methodParamsList = vm.$options.methodsConfig[method.name].params
 
-      const formItems = methodParams.map((param, index) => {
+      // 将 params 转换为表单
+      const formItems = methodParamsList.map((param, index) => {
+        if (!method.arguments[index]) {
+          method.arguments[index] = param.default
+        }
         const editorConfig = param.editor || {}
         const data = {
           props: {
             ...editorConfig.prop || {},
-            [editorConfig.type === 'a-switch' ? 'checked' : 'value']: method.arguments[index] || param.default
+            [editorConfig.type === 'a-switch' ? 'checked' : 'value']: method.arguments[index]
           },
           style: { width: '100%' },
           on: {
@@ -226,13 +279,6 @@ export default {
           </a-tab-pane>
         </a-tabs>
       </div>
-    },
-    /**
-     *
-     * @param {Object} script <{ label, value // script content string }>
-     */
-    mixinScript (script) {
-      this.editingElement.mixinScript(script)
     }
   },
   created () {
@@ -244,7 +290,7 @@ export default {
       {this.renderScriptsModule()}
       <div style="margin: 20px 0;"></div>
       {this.renderSelectActions(h)}
-      <a-modal
+      {/* <a-modal
         width={800}
         title={this.dialog.view.title}
         visible={this.dialog.view.visible}
@@ -252,7 +298,7 @@ export default {
         onCancel={() => { this.dialog.view.visible = false }}
       >
         <div ref="editor" id="script-editor" style="height:480px;"></div>
-      </a-modal>
+      </a-modal> */}
     </div>)
   }
 }

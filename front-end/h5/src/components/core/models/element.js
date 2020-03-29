@@ -148,8 +148,8 @@ class Element {
     const Ctor = Vue.component(this.name + this.uuid)
     const vm = new Ctor()
     const handlers = this.methodList.reduce((handlers, method) => {
-      // bind is fine too：handlers[method.type] = vm[method.name].bind(vm, method.arguments)
-      handlers[method.type] = () => vm[method.name].apply(vm, method.arguments)
+      // bind is fine too：handlers[method.trigger] = vm[method.name].bind(vm, method.arguments)
+      handlers[method.trigger] = () => vm[method.name].apply(vm, method.arguments)
       return handlers
     }, {})
     return handlers
