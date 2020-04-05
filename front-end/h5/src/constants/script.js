@@ -2,7 +2,7 @@
  * @Author: ly525
  * @Date: 2020-02-11 11:35:41
  * @LastEditors: ly525
- * @LastEditTime: 2020-02-22 22:41:21
+ * @LastEditTime: 2020-04-05 14:28:58
  * @FilePath: /luban-h5/front-end/h5/src/constants/script.js
  * @Github: https://github.com/ly525/luban-h5
  * @Description: Do not edit
@@ -11,7 +11,7 @@
 export default [
   {
     uuid: '1581397464691',
-    label: '跳转行为',
+    label: '外部跳转1',
     value: `return {
       methodsConfig: {              // 此项配置自定义方法的在组件配置面板如何展示
         clickFn: {             // 方法名，对应于 methods 内的某方法
@@ -71,7 +71,7 @@ export default [
       methods:{
         clickFn:function(type, url){
           console.log(url)
-          let win = window.open(url, '_blank')
+          let win = window.open(type+url, '_blank')
           win.focus()
         }
       }
@@ -83,7 +83,7 @@ export default [
     value: `return {
       methodsConfig: {              // 此项配置自定义方法的在组件配置面板如何展示
         clickFn2: {             // 方法名，对应于 methods 内的某方法
-          label: '外部跳转1',        // 自定义方法显示名
+          label: '跳转行为2',        // 自定义方法显示名
           params: [                 // 参数列表，对象数组
             {
               label: '跳转地址',     // 参数1的名称
@@ -100,6 +100,26 @@ export default [
           let win = window.open(url, '_blank')
           win.focus()
         }
+      }
+    }`
+  },
+  {
+    uuid: '1581397464695',
+    label: '加载数据-1',
+    value: `return {
+      created() {
+        // const req = new XMLHttpRequest();
+        // req.onreadystatechange = () => {
+        //   if (req.readyState === 200) {
+        //     window.dataCenter = {};
+        //   }
+        // };
+        // req.setHeader()
+        // req.open('GET', url, true)
+        // req.send(null);
+        this.$lubanUtils.request.get('/works/7').then(res => {
+          window.dataCenter = res.data;
+        });
       }
     }`
   }

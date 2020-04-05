@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store/'
 import i18n from './locales'
+import axios from 'axios'
 // import './registerServiceWorker'
 // import ElementUI from 'element-ui'
 import { ColorPicker, Button } from 'element-ui'
@@ -17,7 +18,9 @@ import vClickOutside from 'v-click-outside'
 Vue.config.productionTip = false
 Vue.use(Antd)
 Vue.use(vClickOutside)
-
+Vue.prototype.$lubanUtils = {
+  request: axios
+}
 /**
  * #!en import element-ui color picker for bgcolor、color, because a-input(ant-design-vue) component do not support alpha
  * #!zh 引入 element-ui 颜色选择器，因为 ant-design-vue 没有提供颜色选择器，默认的 <a-input type="color" /> 不支持选择透明度
