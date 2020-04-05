@@ -1,6 +1,21 @@
 import Vue from 'vue'
 import { parsePx } from '../../../utils/element.js'
 
+/**
+ * 获取 string path 对应的 value
+ * 摘自vue 源码
+ * getVMVal({a:1}, 'a') -> 1
+ * getVMVal({a: {b: 1}}, 'a.b') -> 1
+ */
+function getVMVal (vm, exp) {
+  let val = vm
+  exp = exp.split('.')
+  exp.forEach(k => {
+    val = val[k]
+  })
+  return val
+}
+
 // #! 编辑状态，不可以点击的按钮，因为点击按钮会触发一些默认行为，比如表单提交等
 const disabledPluginsForEditMode = ['lbp-form-input', 'lbp-form-button', 'lbp-video']
 const cloneObj = (value) => JSON.parse(JSON.stringify(value))
@@ -33,10 +48,15 @@ class Element {
      * 3. 为何需要 clone，因为会有 element.clone() 以及 page.clone()，
      *    element.pluginProps 和 elementcommonStyle 是引用类型，如果不做 deep_clone 可能会出现意外错误
      */
-    this.pluginProps = (typeof ele.pluginProps === 'object' && cloneObj({ ...ele.pluginProps, uuid: this.uuid })) ||
-                        this.getDefaultPluginProps(ele.props || {})
-    this.commonStyle = (typeof ele.commonStyle === 'object' && cloneObj(ele.commonStyle)) ||
-                        { ...defaultStyle, zindex: ele.zindex }
+    this.pluginProps = (
+      typeof ele.pluginProps === 'object' &&
+      cloneObj({
+        ...ele.pluginProps, uuid: this.uuid
+      })
+    ) || this.getDefaultPluginProps(ele.props || {})
+    this.commonStyle = (
+      typeof ele.commonStyle === 'object' &&
+      cloneObj(ele.commonStyle)) || { ...defaultStyle, zindex: ele.zindex }
     this.methodList = ele.methodList || []
     /**
       script item<{
@@ -93,8 +113,17 @@ class Element {
   }
 
   getProps ({ mode = 'edit' } = {}) {
+    // 插值替换 <span>{{a}}<spam> + {a: 10} => <span>10</span>
+    const reg = /\{\{(.*)\}\}/g
+    const pluginProps = mode === 'preview' ? JSON.parse(JSON.stringify(this.pluginProps).replace(reg, (match, p1) => {
+      // https://stackoverflow.com/questions/6491463/accessing-nested-javascript-objects-and-arays-by-string-path
+      p1 = p1.trim().replace(/\[(\w+)\]/g, '.$1') // convert indexes to properties
+      p1 = p1.replace(/^\./, '') // strip a leading dot
+      return getVMVal(window.dataCenter, p1)
+    })) : this.pluginProps
+
     return {
-      ...this.pluginProps,
+      ...pluginProps,
       disabled: disabledPluginsForEditMode.includes(this.name) && mode === 'edit'
     }
   }
