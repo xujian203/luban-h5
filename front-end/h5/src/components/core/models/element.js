@@ -202,6 +202,14 @@ class Element {
   mixinScript (script) {
     const basePlugin = Vue.component(this.name + this.uuid)
     const mixin = new Function(script.value)()
+
+    // 这里需要注意：
+    // 因为在不同的脚本中，方法的配置信息字段都是：methodsConfig，因此根据 Vue.mixin 的规则，后mixin 的会覆盖前面的同名
+    // 因此需要将前面的 methodsConfig 和 新mixin.methodsConfig 进行合并，防止之前的 methodsConfig 消失了
+    mixin.methodsConfig = {
+      ...basePlugin.options.methodsConfig,
+      ...mixin.methodsConfig
+    }
     const pluginWithMixins = basePlugin.mixin(mixin)
     Vue.component(this.name + this.uuid, pluginWithMixins)
   }
