@@ -217,10 +217,13 @@ export default {
      */
     renderScriptItem (script) {
       return (
-        <a-dropdown-button onClick={() => {
-          this.mixinScript(script)
-          this.editingElement.scripts.push(script)
-        }}>
+        <a-dropdown-button
+          style="margin: 4px;"
+          onClick={() => {
+            this.mixinScript(script)
+            this.editingElement.scripts.push(script)
+          }}
+        >
           {script.label}
           <a-menu slot="overlay" onClick={({ key }) => {
             switch (key) {
