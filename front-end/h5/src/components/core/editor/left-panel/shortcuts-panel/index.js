@@ -111,27 +111,31 @@ export default {
   render (h) {
     // return this.renderShortCutsPanel(this.groups)
     return (
-      <a-row gutter={20} style="max-height: calc(100vh - 140px);overflow: scroll;">
+      <a-row
+        gutter={20}
+        style="max-height: calc(100vh - 150px);overflow: auto;margin:0;"
+      >
         <UsageTip />
-        {
-          [].concat(this.pluginsList, this.npmPackages)
-            .filter(plugin => plugin.visible)
-            .map(plugin => (
-              <a-col span={12} style={{ marginTop: '10px' }}>
-                <ShortcutButton
-                  clickFn={this.clone.bind(this, plugin)}
-                  mousedownFn={this.handleDragStartFromMixin.bind(this, plugin)}
-                  // title={plugin.title}
-                  title={plugin.i18nTitle[this.currentLang] || plugin.title}
-                  faIcon={plugin.icon}
-                  disabled={plugin.disabled}
-                />
-              </a-col>
-            ))
-        }
-        <LoadNpmPlugins onLoadComplete={npmPackages => {
-          this.npmPackages = npmPackages
-        }} />
+        {[]
+          .concat(this.pluginsList, this.npmPackages)
+          .filter(plugin => plugin.visible)
+          .map(plugin => (
+            <a-col span={12} style={{ marginTop: '10px' }}>
+              <ShortcutButton
+                clickFn={this.clone.bind(this, plugin)}
+                mousedownFn={this.handleDragStartFromMixin.bind(this, plugin)}
+                // title={plugin.title}
+                title={plugin.i18nTitle[this.currentLang] || plugin.title}
+                faIcon={plugin.icon}
+                disabled={plugin.disabled}
+              />
+            </a-col>
+          ))}
+        <LoadNpmPlugins
+          onLoadComplete={npmPackages => {
+            this.npmPackages = npmPackages
+          }}
+        />
       </a-row>
     )
   }

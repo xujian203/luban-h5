@@ -3,6 +3,7 @@ import Vue from 'vue'
 
 import 'core/support/index.js'
 import 'core/styles/index.scss'
+import 'core/styles/app.scss'
 import 'animate.css'
 
 import FixedTools from 'core/editor/fixed-tools/index'
@@ -42,7 +43,9 @@ const CoreEditor = {
   },
   methods: {
     ...mapActions('editor', ['fetchWork']),
-    handlePreview () { this.previewDialogVisible = true }
+    handlePreview () {
+      this.previewDialogVisible = true
+    }
   },
   render (h) {
     return (
@@ -53,7 +56,11 @@ const CoreEditor = {
         <a-layout>
           <EditorLeftPanel />
           <EditorCanvas />
-          <AdjustLineV onLineMove={(offset) => { this.propsPanelWidth += offset }} />
+          <AdjustLineV
+            onLineMove={offset => {
+              this.propsPanelWidth += offset
+            }}
+          />
           <FixedTools />
           <EditorRightPanel width={this.propsPanelWidth} />
         </a-layout>
@@ -61,7 +68,9 @@ const CoreEditor = {
           <PreviewDialog
             work={this.work}
             visible={this.previewDialogVisible}
-            handleClose={() => { this.previewDialogVisible = false }}
+            handleClose={() => {
+              this.previewDialogVisible = false
+            }}
           />
         }
         <Feedback />
