@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 import 'core/support/index.js'
 import 'core/styles/index.scss'
-import 'core/styles/app.scss'
+import 'core/styles/scrolllbar.scss'
 import 'animate.css'
 
 import FixedTools from 'core/editor/fixed-tools/index'
