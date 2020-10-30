@@ -56,11 +56,7 @@ const CoreEditor = {
         <a-layout>
           <EditorLeftPanel />
           <EditorCanvas />
-          <AdjustLineV
-            onLineMove={offset => {
-              this.propsPanelWidth += offset
-            }}
-          />
+          <AdjustLineV onLineMove={(offset) => { this.propsPanelWidth += offset }} />
           <FixedTools />
           <EditorRightPanel width={this.propsPanelWidth} />
         </a-layout>
