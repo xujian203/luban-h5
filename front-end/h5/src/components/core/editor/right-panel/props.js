@@ -86,10 +86,10 @@ export default {
           [item.type === 'a-switch' ? 'checked' : 'value']: editingElement.pluginProps[propKey]
         },
         on: {
-        // https://vuejs.org/v2/guide/render-function.html#v-model
-        // input (e) {
-        //   editingElement.pluginProps[propKey] = e.target ? e.target.value : e
-        // }
+          // https://vuejs.org/v2/guide/render-function.html#v-model
+          // input (e) {
+          //   editingElement.pluginProps[propKey] = e.target ? e.target.value : e
+          // }
           change (e) {
             // fixme: update plugin props in vuex with dispatch
             editingElement.pluginProps[propKey] = e.target ? e.target.value : e
@@ -110,7 +110,7 @@ export default {
         <a-form-item {...formItemData}>
           {/* extra: 操作补充说明 */}
           { item.extra && <div slot="extra">{typeof item.extra === 'function' ? item.extra(h) : item.extra}</div>}
-          { h(item.type, data) }
+          { h(item.type, data)}
         </a-form-item>
       )
     },

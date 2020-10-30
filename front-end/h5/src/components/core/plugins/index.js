@@ -20,34 +20,34 @@ import LbpNewsList from 'core/plugins/lbp-news-list'
 // import LbpTabs from 'core/components/plugins/lbp-tabs'
 
 export const pluginsList = [
-  {
-    i18nTitle: {
-      'en-US': 'RadarChart',
-      'zh-CN': '雷达图'
-    },
-    title: '雷达图',
-    icon: 'line-chart',
-    component: LbpLineChart,
-    visible: true,
-    name: LbpLineChart.name,
-    shortcutProps: {
-      type: 'radar'
-    }
-  },
-  {
-    i18nTitle: {
-      'en-US': 'LineChart',
-      'zh-CN': '折线图'
-    },
-    title: '折线图',
-    icon: 'line-chart',
-    component: LbpLineChart,
-    visible: true,
-    name: LbpLineChart.name,
-    shortcutProps: {
-      type: 'line'
-    }
-  },
+  // {
+  //   i18nTitle: {
+  //     'en-US': 'RadarChart',
+  //     'zh-CN': '雷达图'
+  //   },
+  //   title: '雷达图',
+  //   icon: 'line-chart',
+  //   component: LbpLineChart,
+  //   visible: true,
+  //   name: LbpLineChart.name,
+  //   shortcutProps: {
+  //     type: 'radar'
+  //   }
+  // },
+  // {
+  //   i18nTitle: {
+  //     'en-US': 'LineChart',
+  //     'zh-CN': '折线图'
+  //   },
+  //   title: '折线图',
+  //   icon: 'line-chart',
+  //   component: LbpLineChart,
+  //   visible: true,
+  //   name: LbpLineChart.name,
+  //   shortcutProps: {
+  //     type: 'line'
+  //   }
+  // },
   {
     i18nTitle: {
       'en-US': 'LineChart',

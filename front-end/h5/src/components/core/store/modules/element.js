@@ -36,7 +36,6 @@ export const mutations = {
     const { editingPage, editingElement } = state
     const elements = editingPage.elements
     const len = elements.length
-
     switch (type) {
       case 'add':
         const vm = getVM(value.name)

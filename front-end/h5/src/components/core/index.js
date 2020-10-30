@@ -76,7 +76,7 @@ const CoreEditor = {
             }}
           />
         }
-        <Feedback />
+        {/* <Feedback /> */}
       </a-layout>
     )
   },

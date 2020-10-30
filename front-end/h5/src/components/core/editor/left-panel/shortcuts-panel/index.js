@@ -1,5 +1,4 @@
 import ShortcutButton from './shortcut-button'
-import UsageTip from './usage-tip'
 import LoadNpmPlugins from './load-npm-plugins.vue'
 import langMixin from 'core/mixins/i18n'
 import dragMixin from 'core/mixins/drag'
@@ -115,7 +114,7 @@ export default {
         gutter={20}
         style="max-height: calc(100vh - 150px);overflow: auto;margin:0;"
       >
-        <UsageTip />
+        {/* <UsageTip /> */}
         {[]
           .concat(this.pluginsList, this.npmPackages)
           .filter(plugin => plugin.visible)
