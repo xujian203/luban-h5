@@ -1,4 +1,5 @@
 // 重置windows 滚动条样式
+// 仅windows 生效，mac排除当前逻辑。
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
