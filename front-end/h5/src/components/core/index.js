@@ -43,9 +43,7 @@ const CoreEditor = {
   },
   methods: {
     ...mapActions('editor', ['fetchWork']),
-    handlePreview () {
-      this.previewDialogVisible = true
-    }
+    handlePreview () { this.previewDialogVisible = true }
   },
   render (h) {
     return (
@@ -64,9 +62,7 @@ const CoreEditor = {
           <PreviewDialog
             work={this.work}
             visible={this.previewDialogVisible}
-            handleClose={() => {
-              this.previewDialogVisible = false
-            }}
+            handleClose={() => { this.previewDialogVisible = false }}
           />
         }
         <Feedback />
