@@ -1,12 +1,12 @@
 import React from 'react';
 import { footer } from './data';
 
-function antCloudFooter() {
+function antCloudFooter () {
   const children = footer.map((item, i) => (<div key={i}><a href={item.src} target="_blank">{item.text}</a></div>));
   return (<div>
     <div className="logo" key="logo">
       {/* <img src="https://gw.alipayobjects.com/zos/rmsportal/dnIbXmAgGbRxQJksRsJL.svg" width="72" height="82" /> */}
-      <h1 style={{color: 'white'}}>鲁班 H5</h1>
+      <h1 style={{ color: 'white' }}>Web App</h1>
     </div>
     <div key="nav" className="home-footer-nav-wrapper">
       {children}
@@ -15,7 +15,7 @@ function antCloudFooter() {
   );
 }
 
-function Footer() {
+function Footer () {
   return (
     <div className="home-layout-wrapper home-footer-wrapper">
       <div className="home-layout">

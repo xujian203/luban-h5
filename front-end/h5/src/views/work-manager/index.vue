@@ -79,8 +79,8 @@ export default {
             {this.$t(menu.i18nLabel)}
           </router-link>
         ) : (
-          this.$t(menu.i18nLabel)
-        )
+            this.$t(menu.i18nLabel)
+          )
 
       return menus.map(menu =>
         menu.children ? (
@@ -97,12 +97,12 @@ export default {
             ))}
           </a-sub-menu>
         ) : (
-          <a-menu-item key={menu.key}>
-            <a-icon type={menu.antIcon}></a-icon>
-            {/** 这边有个疑惑，不知是否为 antd-vue 的 bug，需要用 span 包裹，否则不会显示 label */}
-            <span>{renderLabel(menu)}</span>
-          </a-menu-item>
-        )
+            <a-menu-item key={menu.key}>
+              <a-icon type={menu.antIcon}></a-icon>
+              {/** 这边有个疑惑，不知是否为 antd-vue 的 bug，需要用 span 包裹，否则不会显示 label */}
+              <span>{renderLabel(menu)}</span>
+            </a-menu-item>
+          )
       )
     }
   },
@@ -120,7 +120,7 @@ export default {
               }}
             >
               <a-menu-item key="1">
-                <span>someone@luban</span>
+                <span>xx@xxx.com</span>
               </a-menu-item>
               <a-menu-divider />
               <a-menu-item key="2">

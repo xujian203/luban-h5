@@ -54,17 +54,17 @@ export default {
     }
   },
   render (h) {
-    let covers = [this.getCover(placeholderImg, true/** isPlaceholder */)]
+    // let covers = [this.getCover(placeholderImg, true/** isPlaceholder */)]
 
-    if (this.qrcodeUrl) {
-      covers = this.getCoverBg(this.qrcodeUrl, true)
-    } else if (this.coverImageUrl) {
-      const coverImg = this.coverImageUrl.replace('http://localhost:1337', '')
-      covers = [this.getCover(coverImg), this.getCoverBg(coverImg)]
-    }
+    // if (this.qrcodeUrl) {
+    //   covers = this.getCoverBg(this.qrcodeUrl, true)
+    // } else if (this.coverImageUrl) {
+    //   const coverImg = this.coverImageUrl.replace('http://localhost:1337', '')
+    //   covers = [this.getCover(coverImg), this.getCoverBg(coverImg)]
+    // }
 
     return <div class="card-cover-wrapper" >
-      {covers}
+      {/* {covers} */}
     </div>
   }
 }

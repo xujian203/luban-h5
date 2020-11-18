@@ -1,5 +1,5 @@
-import Map from './lbp-qq-map/src/Map'
-import MapMixin from './lbp-qq-map/src/mixin'
+import Map from '../lbp-qq-map/src/Map'
+import MapMixin from '../lbp-qq-map/src/mixin'
 
 export default {
   name: 'lbp-qq-map__editor',

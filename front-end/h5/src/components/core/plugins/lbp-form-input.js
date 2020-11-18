@@ -36,6 +36,7 @@ export default {
       borderColor: this.borderColor,
       borderRadius: this.borderRadius + 'px',
       borderWidth: this.borderWidth + 'px',
+      borderStyle: 'solid',
       padding: '0 5px'
     }
     return <input

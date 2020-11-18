@@ -9,7 +9,7 @@ module.exports = {
       description: 'OpenSource Mobile Page Builder&Generator',
     },
     '/zh/': {
-      title: '鲁班H5',
+      title: 'WebApp',
       lang: 'zh-CN',
       description: '前后端均开源的H5制作平台，类似易企秀、百度H5、Maka、人人秀',
     },
