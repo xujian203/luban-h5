@@ -8,7 +8,6 @@
  * @Description: Do not edit
  * @Copyright 2018 - 2020 luban-h5. All Rights Reserved
  */
-import placeholderImg from '@/assets/lbp-picture-placeholder.png'
 import './card-cover.scss'
 
 function getDefaultStyle (img, isPlaceholder) {

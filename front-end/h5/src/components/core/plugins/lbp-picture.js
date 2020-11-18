@@ -1,6 +1,6 @@
 import PropTypes from '@luban-h5/plugin-common-props'
 
-import placeholderImg from './lbp-picture-placeholder.png' // issue #34
+import placeholderImg from '@/assets/lbp-picture-placeholder.png'
 export default {
   name: 'lbp-picture',
   render () {
