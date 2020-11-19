@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import LbpButton from 'core/plugins/lbp-button'
-import elButton from 'core/plugins/antControl/button'
+import antButton from 'core/plugins/antControl/button'
 import antInput from 'core/plugins/antControl/input'
 import LbpPicture from 'core/plugins/lbp-picture'
 import LbpText from 'core/plugins/lbp-text'
@@ -59,13 +59,13 @@ export const pluginsList = [
   {
     i18nTitle: {
       'en-US': 'Button',
-      'zh-CN': 'EL按钮'
+      'zh-CN': 'ant按钮'
     },
-    title: 'xx按钮',
+    title: 'ant按钮',
     icon: 'hand-pointer-o',
-    component: elButton,
+    component: antButton,
     visible: true,
-    name: elButton.name
+    name: antButton.name
   },
   {
     i18nTitle: {
