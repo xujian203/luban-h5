@@ -45,7 +45,8 @@ export default {
 </script>
 <style scoped>
 .control {
-  width: 75px;
+  /* width: 75px; */
+  width: 101%;
   height: 70px;
   margin-top: -1px;
   margin-left: -1px;
