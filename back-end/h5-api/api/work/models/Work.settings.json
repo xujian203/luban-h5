@@ -7,10 +7,7 @@
   },
   "options": {
     "increments": true,
-    "timestamps": [
-      "created_at",
-      "updated_at"
-    ],
+    "timestamps": ["created_at", "updated_at"],
     "comment": ""
   },
   "attributes": {
@@ -34,16 +31,12 @@
     },
     "page_mode": {
       "type": "enumeration",
-      "enum": [
-        "h5_swipper",
-        "h5_long_page",
-        "h5_form"
-      ],
+      "enum": ["h5_swipper", "h5_long_page", "h5_form"],
       "default": "h5_swipper"
     },
     "height": {
       "type": "integer",
-      "default": 568
+      "default": 800
     }
   }
 }

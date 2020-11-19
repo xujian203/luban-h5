@@ -35,12 +35,12 @@
         </a>
       </div>
       <div class="toolbar-center-c">
-        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ toolbar-group"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
-            <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
+        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ toolbar-group disabled"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
+            <div class="toolbar-icon-wrapper disabled"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M4 9h11v4H4V9zm0-6h6v4H4V3zM2 0h1v16H2V0z"></path>
               </svg></div><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 6 4" aria-hidden="true" type="dropdown-arrow">
               <path d="M3 4l3-4H0z"></path>
-            </svg><span type="tip">Align</span>
+            </svg><span type="tip" class="disabled">Align</span>
           </a>
           <div class="group-content"><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon design-align_left" viewBox="0 0 14 14" aria-hidden="true">
                 <path class="secondary" d="M3 3h9v3H3zM3 8h5v3H3z"></path>
@@ -70,8 +70,6 @@
                 <path class="main" d="M0 6h14v1H0z"></path>
                 <path class="secondary" d="M3 0h3v13H3zM8 3h3v7H8z"></path>
               </svg><span class="tip">Vertical Center</span>
-              <div class="for-mac kbd-size"><kbd>⌥</kbd><kbd>+</kbd><kbd>⌘</kbd><kbd>+</kbd><kbd>V</kbd></div>
-              <div class="for-others kbd-size"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>Alt</kbd><kbd>+</kbd><kbd>V</kbd></div>
             </a><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon design-align_bottom" viewBox="0 0 14 14" aria-hidden="true">
                 <path class="secondary" d="M3 0h3v9H3zM8 4h3v5H8z"></path>
                 <path class="main" d="M0 11h14v1H0z"></path>
@@ -92,12 +90,12 @@
               <div class="for-others kbd-size"></div>
             </a></div>
         </div>
-        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ toolbar-group"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
-            <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
+        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ toolbar-group disabled"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
+            <div class="toolbar-icon-wrapper disabled"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M15 2H5v1H4V1h12v12h-2v-1h1V2zM1 4h12v12H1V4zm2 2v8h8V6H3z"></path>
               </svg></div><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 6 4" aria-hidden="true" type="dropdown-arrow">
               <path d="M3 4l3-4H0z"></path>
-            </svg><span type="tip">Arrange</span>
+            </svg><span class="disabled" type="tip">Arrange</span>
           </a>
           <div class="group-content"><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><span class="icon dora">z_front</span><span class="tip">Send Front</span>
               <div class="for-mac kbd-size"><kbd>⇧</kbd><kbd>+</kbd><kbd>⌘</kbd><kbd>+</kbd><kbd>↑</kbd></div>
@@ -113,19 +111,15 @@
               <div class="for-others kbd-size"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>Alt</kbd><kbd>+</kbd><kbd>↓</kbd></div>
             </a></div>
         </div>
-        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ group-buttons toolbar-group"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
-            <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
+        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ group-buttons toolbar-group disabled"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
+            <div class="toolbar-icon-wrapper disabled"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M13.085 1A1.5 1.5 0 1 1 15 2.915v10.17A1.5 1.5 0 1 1 13.085 15H2.915A1.5 1.5 0 1 1 1 13.085V2.915A1.5 1.5 0 1 1 2.915 1h10.17zm0 1H2.915c-.151.426-.489.764-.915.915v10.17c.426.151.764.489.915.915h10.17c.151-.426.489-.764.915-.915V2.915A1.504 1.504 0 0 1 13.085 2zM10 5h3v8H5v-3H3V3h7v2zm0 1v4H6v2h6V6h-2z"></path>
               </svg></div><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 6 4" aria-hidden="true" type="dropdown-arrow">
               <path d="M3 4l3-4H0z"></path>
-            </svg><span type="tip">Group</span>
+            </svg><span type="tip" class="disabled">Group</span>
           </a>
           <div class="group-content"><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows disabled"><span class="icon dora">group</span><span class="tip">Group</span>
-              <div class="for-mac kbd-size"><kbd>⌘</kbd><kbd>+</kbd><kbd>G</kbd></div>
-              <div class="for-others kbd-size"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>G</kbd></div>
             </a><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows disabled"><span class="icon dora">ungroup</span><span class="tip">Ungroup</span>
-              <div class="for-mac kbd-size"><kbd>⇧</kbd><kbd>+</kbd><kbd>⌘</kbd><kbd>+</kbd><kbd>G</kbd></div>
-              <div class="for-others kbd-size"><kbd>Shift</kbd><kbd>+</kbd><kbd>Ctrl</kbd><kbd>+</kbd><kbd>G</kbd></div>
             </a></div>
         </div>
         <!-- <a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon group-button disabled">
@@ -137,79 +131,32 @@
           <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M10 7h3.085A1.5 1.5 0 1 1 15 8.915v4.17A1.5 1.5 0 1 1 13.085 15h-4.17A1.5 1.5 0 1 1 7 13.085V10H3.915A1.5 1.5 0 1 1 2 8.085v-4.17A1.5 1.5 0 1 1 3.915 2h4.17A1.5 1.5 0 1 1 10 3.915V7zm0 1v.085A1.5 1.5 0 1 1 8.085 10H8v3.085c.426.151.764.489.915.915h4.17c.151-.426.489-.764.915-.915v-4.17A1.504 1.504 0 0 1 13.085 8H10z"></path>
             </svg></div><span type="tip">Ungroup</span>
-        </a><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
+        </a><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon disabled">
           <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M3 6V5c0-2.916 1.737-5 5-5s5 2.084 5 5v1h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1zm2 0h6V5c0-1.884-.93-3-3-3S5 3.116 5 5v1zM2 8v6h12V8H2zm6 1a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1z"></path>
             </svg></div><span type="tip">Lock</span>
         </a>
       </div>
       <div>
-        <a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon toolbar-tooptip UNREAD_ORG_LIBRARY_toolbar" style="width:80px;">
-          <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M0 3C0 2.5 0.5 2 1 2L14 2C14 2 14 2 14 2 14.6 2 15 2.4 15 3L15 13C15 13.6 14.6 14 14 14L1 14C1 14 1 14 1 14 0.4 14 0 13.6 0 13L0 3ZM10 7L13 11.6 13 4 2 4 2 12 4.6 9.3 5.9 11.6 10 7ZM4.5 8C3.7 8 3 7.3 3 6.5 3 5.7 3.7 5 4.5 5 5.3 5 6 5.7 6 6.5 6 7.3 5.3 8 4.5 8ZM3 16L3 15 12 15 12 16 3 16ZM3 1L3 0 12 0 12 1 3 1Z"></path>
-            </svg></div><span type="tip">Resources</span>
-        </a>
-        <a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon toolbar-tooptip version-control">
-          <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 17 18" aria-hidden="true">
-              <g fill-rule="nonzero" fill="none">
-                <path d="M8.491 18a8.483 8.483 0 01-6.757-3.351A8.51 8.51 0 01.307 7.234a.98.98 0 111.89.52 6.543 6.543 0 002.63 7.159 6.521 6.521 0 007.614-.208 6.544 6.544 0 002.235-7.292 6.53 6.53 0 00-6.185-4.451 6.446 6.446 0 00-3.03.742.978.978 0 01-1.531-.884.98.98 0 01.624-.84 8.478 8.478 0 019.584 1.156 8.508 8.508 0 012.307 9.386A8.488 8.488 0 018.49 18z" fill="#5B6B73"></path>
-                <path class="fore" d="M9.671 5.033h-.987c-.182 0-.329.139-.329.31v3.801c0 .17-.147.31-.329.31H4.973a.34.34 0 00-.233.09.3.3 0 00-.096.219v.928a.3.3 0 00.096.218.34.34 0 00.233.091h4.698a.34.34 0 00.233-.09.3.3 0 00.096-.22V5.343a.3.3 0 00-.096-.218.34.34 0 00-.233-.091z" fill="#298DF8"></path>
-                <path d="M6.71 5.42c-.122 0-.244-.02-.358-.062L3.628 4.356a.963.963 0 01-.545-.493.877.877 0 01-.015-.71L4.134.59c.198-.477.77-.714 1.278-.527.508.186.76.724.561 1.201L5.25 2.964l1.807.665c.437.162.692.593.608 1.028-.084.436-.483.755-.954.763z" fill="#5B6B73"></path>
-              </g>
-            </svg></div><span type="tip">Version</span>
-        </a>
-        <div id="design-export"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon toolbar-tooptip">
-            <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M6 7V1h3v6h1.877a.5.5 0 0 1 .372.834l-3.377 3.753a.5.5 0 0 1-.744 0L3.751 7.834A.5.5 0 0 1 4.123 7H6zm7 7v-2h2v2.5a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 14.5V12h2v2h11z"></path>
-              </svg></div><span type="tip">Export</span>
-          </a></div>
-        <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon share-button">
-            <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M11.586 3H9V1h5a1 1 0 0 1 1 1v5h-2V4.414L7.707 9.707 6.293 8.293 11.586 3zM13 14v-4h2v5a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5v2H2v11h11z"></path>
-              </svg></div><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 6 4" aria-hidden="true" type="dropdown-arrow">
-              <path d="M3 4l3-4H0z"></path>
-            </svg><span type="tip">Share</span>
-          </a>
-          <div class="group-content square-option">
-            <div class="square-item">Share</div>
-            <div class="square-item">Upload to Square</div>
-          </div>
-        </div>
+
       </div>
     </div>
-    <div class="toolbar-right"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon toolbar-tooptip">
-        <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M11 13a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-1.732-1H3.067C2.477 15 2 14.522 2 13.933V10h1.964v3H11zM4.5 2h8.433C13.523 2 14 2.478 14 3.067V6h-1.964V4H4.95a2.5 2.5 0 1 1-.45-2z"></path>
-          </svg></div><span type="tip">Flow</span>
-      </a>
-      <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ launch-group"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
+    <div class="toolbar-right">
+      <div id="design-export"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon toolbar-tooptip disabled ">
+          <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M6 7V1h3v6h1.877a.5.5 0 0 1 .372.834l-3.377 3.753a.5.5 0 0 1-.744 0L3.751 7.834A.5.5 0 0 1 4.123 7H6zm7 7v-2h2v2.5a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 14.5V12h2v2h11z"></path>
+            </svg></div><span type="tip">Export</span>
+        </a></div>
+      <div class="styles__StyledToolbarGroup-fqqtoa-1 ftuReJ launch-group" @click="this.handlePreview"><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
           <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-2A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
               <path d="M6.4 11.2V4.8L11.2 8z" class="fore"></path>
-            </svg></div><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 6 4" aria-hidden="true" type="dropdown-arrow">
-            <path d="M3 4l3-4H0z"></path>
-          </svg><span type="tip">Preview</span>
+            </svg></div><span type="tip">Preview</span>
         </a>
-        <div class="group-content"><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon design-play_toolbar" viewBox="0 0 14 14" aria-hidden="true">
-              <path d="M0 6.875C-.01 5.621 2.79 2 6.72 2c3.93 0 6.72 3.67 6.72 4.875s-2.691 4.875-6.72 4.875S.01 8.129 0 6.875zm6.72 2.708c1.546 0 2.8-1.212 2.8-2.708 0-1.496-1.254-2.708-2.8-2.708-1.546 0-2.8 1.212-2.8 2.708 0 1.496 1.254 2.708 2.8 2.708zm.747-4.1a.92.92 0 0 0-.427.773c0 .513.43.929.96.929.14 0 .272-.03.391-.08-.085.819-.8 1.459-1.671 1.459-.928 0-1.68-.728-1.68-1.625s.752-1.625 1.68-1.625c.269 0 .522.06.747.17z"></path>
-            </svg><span class="tip">Preview</span>
-            <div class="for-mac kbd-size"><kbd>⌘</kbd><kbd>+</kbd><kbd>P</kbd></div>
-            <div class="for-others kbd-size"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>P</kbd></div>
-          </a><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon design-inspect_toolbar" viewBox="0 0 14 14" aria-hidden="true">
-              <path d="M14 7l-3.3 3.3-.825-.825L12.35 7 9.875 4.525 10.7 3.7 14 7zM1.65 7l2.475 2.475-.825.825L0 7l3.3-3.3.824.825L1.65 7zm4.091 5H4.5L8.259 2H9.5L5.741 12z"></path>
-            </svg><span class="tip">Handoff</span>
-            <div class="for-mac kbd-size"></div>
-            <div class="for-others kbd-size"></div>
-          </a><a class="styles__StyledGroupIcon-sc-1dia5c8-0 fHQkeb group-icon windows"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon design-comment_toolbar" viewBox="0 0 14 14" aria-hidden="true">
-              <path d="M2 1h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9l-2 2-2-2H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm2 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-            </svg><span class="tip">Comment</span>
-            <div class="for-mac kbd-size"></div>
-            <div class="for-others kbd-size"></div>
-          </a></div>
       </div>
-      <div class="styles__StyledToolbarMenu-sc-1t78znr-0 cSgcYj"><a class="menu-opener"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
+      <div class="styles__StyledToolbarMenu-sc-1t78znr-0 cSgcYj disabled"><a class="menu-opener disabled"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
             <path d="M8 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
-          </svg><span type="tip">More</span><span class="styles__StyledSUnreadSignal-sc-1ih984t-0 gyyzxF toolbar-menu-opener-notice"></span></a>
+          </svg><span type="tip" class="disabled">More</span><span class="styles__StyledSUnreadSignal-sc-1ih984t-0 gyyzxF toolbar-menu-opener-notice"></span></a>
         <div class="menu-content">
           <li class="menu-item has-svg"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon check" viewBox="0 0 14 13" aria-hidden="true">
               <path d="M9.966 12H14v1H7v-.019A6.5 6.5 0 1 1 9.966 12zM6.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3-3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm6 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
@@ -228,13 +175,74 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Header',
+  name: 'xxHeader',
+  computed: {
+    ...mapState('editor', {
+      editingPage: state => state.editingPage,
+      editingElement: state => state.editingElement,
+      elements: state => state.editingPage.elements,
+      pages: state => state.work.pages,
+      work: state => state.work
+    }),
+    ...mapState('loading', [
+      'saveWork_loading',
+      'previewWork_loading',
+      'setWorkAsTemplate_loading',
+      'uploadWorkCover_loading'
+    ])
+  },
+  methods: {
+    ...mapActions('editor', [
+      'elementManager',
+      'pageManager',
+      'saveWork',
+      'createWork',
+      'fetchWork',
+      'updateWork',
+      'setWorkAsTemplate',
+      // 'setEditingElement',
+      'setEditingPage'
+    ]),
+    ...mapActions('loading', {
+      updateLoading: 'update'
+    }),
+    handlePreview () {
+      console.log('handlePreview')
+      this.saveWork({ loadingName: 'previewWork_loading' }).then(() => {
+        this.$emit('preview')
+        // this.previewDialogVisible = true
+      })
+    },
+    handleSave () {
+      this.saveWork({ isSaveCover: true })
+    },
+    handlePublish () {
+      this.updateWork({ is_publish: true })
+      this.saveWork({ successMsg: '发布成功' })
+    },
+    handleSetAsTemplate () {
+      this.updateLoading({ type: 'setWorkAsTemplate_loading', value: true })
+      this.saveWork().then(() => {
+        this.setWorkAsTemplate()
+      })
+    },
+    handleSelectItem ({ key }) {
+      switch (key) {
+        case 'setAsTemplate':
+          this.handleSetAsTemplate()
+      }
+    }
+  },
   components: {
   }
 }
 </script>
 <style lang="scss" scoped>
+.disabled {
+  color: rgb(200, 205, 208);
+}
 .layout-header {
   padding: 0 10px;
   .logo {

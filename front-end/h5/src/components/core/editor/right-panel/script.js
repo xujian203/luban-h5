@@ -51,7 +51,7 @@ export default {
       <a-button onClick={this.mixinScript} disabled>使用脚本</a-button>
       <div style={{ margin: '20px' }}></div>
       <a-textarea
-        rows={12}
+        rows={36}
         placeholder="Basic usage"
         value={this.editorContent}
         onChange={(e) => {

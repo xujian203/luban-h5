@@ -1,6 +1,6 @@
 // https://github.com/luban-h5-components/plugin-common-props
 import PropTypes from '@luban-h5/plugin-common-props'
-
+import axios from 'axios'
 export default {
   render () {
     const {
@@ -27,9 +27,19 @@ export default {
       textDecoration: 'none'
     }
     return (
-      <a-button
+      <a-button onClick={this.handleClick}
         style={style}
       >{text}</a-button>)
+  },
+  methods: {
+    async handleClick () {
+      const result = await axios[this.method](this.api)
+      console.log(result)
+    }
+  },
+  clickProps: {
+    method: 'post',
+    api: ''
   },
   name: 'lbp-button',
   props: {
@@ -42,6 +52,8 @@ export default {
     borderWidth: PropTypes.number({ label: '边框宽度(px)', defaultValue: 1 }),
     borderRadius: PropTypes.number({ label: '圆角(px)', defaultValue: 4 }),
     borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' }),
-    textAlign: PropTypes.textAlign()
+    textAlign: PropTypes.textAlign(),
+    method: PropTypes.string({ label: 'method', defaultValue: 'get' }),
+    api: PropTypes.string({ label: 'api', defaultValue: 'http://localhost:1337/works' })
   }
 }

@@ -15,7 +15,7 @@ const state = {
     formRecords: []
   },
   workTemplates: [],
-  scaleRate: 0.699
+  scaleRate: 0.75
 }
 
 // getters

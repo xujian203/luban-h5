@@ -6,7 +6,7 @@ export default {
   name: 'EditorLeftPanel',
   render (h) {
     return (
-      <a-layout-sider width="240" theme='light' style={{ background: '#fff', padding: '12px' }}>
+      <a-layout-sider width="240" theme='light' style={{ background: '#e8e8e9', padding: '12px' }}>
         <a-tabs
           style="height: 100%;"
           tabBarGutter={10}

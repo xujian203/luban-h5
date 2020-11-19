@@ -51,7 +51,7 @@ const CoreEditor = {
   render (h) {
     return (
       <a-layout>
-        <Header>
+        <Header onPreview={this.handlePreview} >
           <EditorActionMenu slot="action-menu" onPreview={this.handlePreview} />
         </Header>
         <a-layout>

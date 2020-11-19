@@ -1,4 +1,4 @@
-import ShortcutButton from './shortcut-button'
+import ShortcutButton from './shortcut-button.vue'
 // import LoadNpmPlugins from './load-npm-plugins.vue'
 import langMixin from 'core/mixins/i18n'
 import dragMixin from 'core/mixins/drag'
@@ -36,15 +36,15 @@ export default {
     // return this.renderShortCutsPanel(this.groups)
     return (
       <a-row
-        gutter={20}
-        style="max-height: calc(100vh - 150px);overflow: auto;margin:0;"
+        gutter={0}
+        style="max-height: calc(100vh - 150px);overflow: auto;overflow-x:hidden; margin:0;background-color:#e8e8e9"
       >
         {/* <UsageTip /> */}
         {[]
           .concat(this.pluginsList, this.npmPackages)
           .filter(plugin => plugin.visible)
           .map(plugin => (
-            <a-col span={12} style={{ marginTop: '10px' }}>
+            <a-col span={8} style={{ marginTop: '0px' }}>
               <ShortcutButton
                 clickFn={this.clone.bind(this, plugin)}
                 mousedownFn={this.handleDragStartFromMixin.bind(this, plugin)}
