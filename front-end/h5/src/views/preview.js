@@ -26,12 +26,21 @@ export default {
   data () {
     return {
       isLongPage: true,
-      work: null
+      work: null,
+      currentPage: null
     }
   },
   methods: {
-    renderLongPage (work) {
-      return this.renderPreview(work.pages[0].elements)
+    onMenuClick (menu) {
+      console.log('onMenuClick', menu)
+      const page = this.work.pages.find(s => s.uuid === menu.uuid)
+      console.log('page', page)
+      if (page) {
+        this.currentPage = page
+      }
+    },
+    renderLongPage () {
+      return this.renderPreview(this.currentPage.elements)
     },
     renderSwiperPage () {
       const work = window.__work
@@ -41,7 +50,6 @@ export default {
             {work.pages.map(page => {
               return (
                 <section class="swiper-slide flat">
-                  {/* this.walk(h, page.elements) */}
                   {this.renderPreview(page.elements)}
                 </section>
               )
@@ -64,9 +72,10 @@ export default {
         </div>)
     },
     renderWithMaster (work) {
+      console.log('work', work)
       return (
         <a-layout style={{ height: '100vh' }}>
-          <a-layout-sider><sidebar></sidebar></a-layout-sider>
+          <a-layout-sider><sidebar menus={work.pages} on-menuClick={this.onMenuClick}></sidebar></a-layout-sider>
           <a-layout>
             <a-layout-header>表头预览区域</a-layout-header>
             <a-layout-content>
@@ -94,7 +103,8 @@ export default {
   async mounted () {
     const { data: work } = await axios.get('http://localhost:1337/works/15')
     this.work = work
-    this.$forceUpdate()
+    this.currentPage = work.pages[0]
+    // this.$forceUpdate()
   },
   render (h) {
     const { work } = this
