@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import LbpButton from 'core/plugins/lbp-button'
 import antButton from 'core/plugins/antControl/button'
-import antInput from 'core/plugins/antControl/input'
+import antInput2 from 'core/plugins/antControl/input.vue'
 import LbpPicture from 'core/plugins/lbp-picture'
 import LbpText from 'core/plugins/lbp-text'
 import LbpFormInput from 'core/plugins/lbp-form-input'
@@ -47,14 +47,14 @@ export const pluginsList = [
   },
   {
     i18nTitle: {
-      'en-US': 'input',
-      'zh-CN': 'input'
+      'en-US': 'input2',
+      'zh-CN': 'ant-input'
     },
-    title: 'input',
+    title: 'ant-input',
     icon: 'hand-pointer-o',
-    component: antInput,
+    component: antInput2,
     visible: true,
-    name: antInput.name
+    name: antInput2.name
   },
   {
     i18nTitle: {

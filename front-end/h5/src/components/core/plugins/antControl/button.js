@@ -41,7 +41,7 @@ export default {
     method: 'post',
     api: ''
   },
-  name: 'lbp-button',
+  name: 'ant-button',
   props: {
     text: PropTypes.string(),
     vertical: PropTypes.boolean(),

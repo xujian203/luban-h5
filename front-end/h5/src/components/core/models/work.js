@@ -12,7 +12,7 @@ import Page from './page.js'
 import { PAGE_MODE } from 'core/constants/work'
 
 class Work {
-  constructor(work = {}) {
+  constructor (work = {}) {
     this.id = work.id
     this.title = work.title || '标题'
     this.description = work.description || '描述'
