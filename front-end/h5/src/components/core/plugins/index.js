@@ -2,6 +2,7 @@ import Vue from 'vue'
 import LbpButton from 'core/plugins/lbp-button'
 import antButton from 'core/plugins/antControl/button'
 import antInput2 from 'core/plugins/antControl/input.vue'
+import antTable from 'core/plugins/antControl/table.vue'
 import LbpPicture from 'core/plugins/lbp-picture'
 import LbpText from 'core/plugins/lbp-text'
 import LbpFormInput from 'core/plugins/lbp-form-input'
@@ -131,6 +132,19 @@ export const pluginsList = [
     component: LbpTable,
     visible: true,
     name: LbpTable.name,
+    shortcutProps: {
+      theme: 'lbp-table-theme-light-blue'
+    }
+  },
+  {
+    i18nTitle: {
+      'en-US': 'Table',
+      'zh-CN': 'Ant表格'
+    },
+    icon: 'table',
+    component: antTable,
+    visible: true,
+    name: antTable.name,
     shortcutProps: {
       theme: 'lbp-table-theme-light-blue'
     }
