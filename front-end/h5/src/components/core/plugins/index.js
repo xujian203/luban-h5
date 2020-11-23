@@ -5,6 +5,8 @@ import antInput2 from 'core/plugins/antControl/input.vue'
 import antTable from 'core/plugins/antControl/table.vue'
 import antRow from 'core/plugins/antControl/row.vue'
 import antColumn from 'core/plugins/antControl/column.vue'
+import antSelector from 'core/plugins/antControl/selector.vue'
+import searchSection from 'core/plugins/combinedControl/searchSection.vue'
 import LbpPicture from 'core/plugins/lbp-picture'
 import LbpText from 'core/plugins/lbp-text'
 import LbpFormInput from 'core/plugins/lbp-form-input'
@@ -58,7 +60,19 @@ export const pluginsList = [
     component: antInput2,
     visible: true,
     name: antInput2.name
-  }, {
+  },
+  {
+    i18nTitle: {
+      'en-US': 'antSelector',
+      'zh-CN': 'antSelector'
+    },
+    title: 'antSelector',
+    icon: 'hand-pointer-o',
+    component: antSelector,
+    visible: true,
+    name: antSelector.name
+  },
+  {
     i18nTitle: {
       'en-US': 'antRow',
       'zh-CN': 'antRow'
@@ -78,6 +92,17 @@ export const pluginsList = [
     component: antColumn,
     visible: true,
     name: antColumn.name
+  },
+  {
+    i18nTitle: {
+      'en-US': 'searchSection',
+      'zh-CN': 'searchSection'
+    },
+    title: 'searchSection',
+    icon: 'hand-pointer-o',
+    component: searchSection,
+    visible: true,
+    name: searchSection.name
   },
   {
     i18nTitle: {
