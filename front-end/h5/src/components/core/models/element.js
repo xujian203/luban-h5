@@ -76,6 +76,15 @@ class Element {
     return pluginProps
   }
 
+  getElementResizeBlockWidth (elementWidth, isRem) {
+    console.log('elementWidth', elementWidth)
+    if (`${elementWidth}`.includes('%')) {
+      return elementWidth
+    } else {
+      return parsePx(elementWidth, isRem)
+    }
+  }
+
   getStyle ({ position = 'static', isRem = false } = {}) {
     if (this.name === 'lbp-background') {
       return {
@@ -88,7 +97,7 @@ class Element {
     let style = {
       top: parsePx(pluginProps.top || commonStyle.top, isRem),
       left: parsePx(pluginProps.left || commonStyle.left, isRem),
-      width: parsePx(pluginProps.width || commonStyle.width, isRem),
+      width: this.getElementResizeBlockWidth(pluginProps.width || commonStyle.width, isRem),
       height: parsePx(pluginProps.height || commonStyle.height, isRem),
       fontSize: parsePx(pluginProps.fontSize || commonStyle.fontSize, isRem),
       color: pluginProps.color || commonStyle.color,

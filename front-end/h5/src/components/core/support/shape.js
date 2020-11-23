@@ -16,7 +16,8 @@ const points = ['lt', 'rt', 'lb', 'rb', 'l', 'r', 't', 'b']
 
 export default {
   mixins: [animationMixin],
-  props: ['defaultPosition', 'active', 'handleMousedownProp', 'handleElementMoveProp', 'handlePointMoveProp', 'handleElementMouseUpProp', 'handlePointMouseUpProp', 'element'],
+  props: ['defaultPosition', 'active', 'handleMousedownProp', 'handleElementMoveProp',
+    'handlePointMoveProp', 'handleElementMouseUpProp', 'handlePointMouseUpProp', 'element'],
   computed: {
     position () {
       return { ...this.defaultPosition }
@@ -166,9 +167,11 @@ export default {
     }
   },
   render (h) {
+    console.log('ele', this.element)
+    console.log('this.element.pluginProps.enableResize', this.element.pluginProps.enableResize)
     return (
       <div
-        tabIndex="0"
+        tabIndex="0" xujian="xujina"
         onKeydown={this.handleKeyPressed}
         onClick={this.handleWrapperClick}
         onMousedown={this.handleMousedown}
@@ -176,6 +179,8 @@ export default {
       >
         {
           this.active &&
+          (typeof (this.element.pluginProps.enableResize) === 'undefined' ||
+            this.element.pluginProps.enableResize) &&
           points.map(point => {
             const pointStyle = this.getPointStyle(point)
             return (

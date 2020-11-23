@@ -1071,7 +1071,7 @@
           },
           "height": {
             "type": "integer",
-            "default": 568
+            "default": 800
           }
         }
       },
@@ -1106,7 +1106,7 @@
           },
           "height": {
             "type": "integer",
-            "default": 568
+            "default": 800
           }
         }
       }

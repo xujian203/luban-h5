@@ -3,6 +3,8 @@ import LbpButton from 'core/plugins/lbp-button'
 import antButton from 'core/plugins/antControl/button'
 import antInput2 from 'core/plugins/antControl/input.vue'
 import antTable from 'core/plugins/antControl/table.vue'
+import antRow from 'core/plugins/antControl/row.vue'
+import antColumn from 'core/plugins/antControl/column.vue'
 import LbpPicture from 'core/plugins/lbp-picture'
 import LbpText from 'core/plugins/lbp-text'
 import LbpFormInput from 'core/plugins/lbp-form-input'
@@ -56,6 +58,26 @@ export const pluginsList = [
     component: antInput2,
     visible: true,
     name: antInput2.name
+  }, {
+    i18nTitle: {
+      'en-US': 'antRow',
+      'zh-CN': 'antRow'
+    },
+    title: 'antRow',
+    icon: 'hand-pointer-o',
+    component: antRow,
+    visible: true,
+    name: antRow.name
+  }, {
+    i18nTitle: {
+      'en-US': 'antColumn',
+      'zh-CN': 'antColumn'
+    },
+    title: 'antColumn',
+    icon: 'hand-pointer-o',
+    component: antColumn,
+    visible: true,
+    name: antColumn.name
   },
   {
     i18nTitle: {
