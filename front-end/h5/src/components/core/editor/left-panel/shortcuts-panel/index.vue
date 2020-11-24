@@ -36,7 +36,6 @@ export default Vue.extend({
    */
   render (h) {
     // return this.renderShortCutsPanel(this.groups)
-    console.log('pluginsList', this.pluginsList)
     return (
       <a-collapse activeKey={this.activeKey}>
         <a-collapse-panel key="1" header="Basic">

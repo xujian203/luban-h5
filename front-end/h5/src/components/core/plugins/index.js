@@ -4,6 +4,8 @@ import antButton from 'core/plugins/antControl/button'
 import antInput2 from 'core/plugins/antControl/input.vue'
 import antTable from 'core/plugins/antControl/table.vue'
 import antCalendar from 'core/plugins/antControl/calendar.vue'
+
+import basicText from 'core/plugins/basic/text.vue'
 import antRow from 'core/plugins/antControl/row.vue'
 import antColumn from 'core/plugins/antControl/column.vue'
 import antSelector from 'core/plugins/antControl/selector.vue'
@@ -16,26 +18,27 @@ import LbpFormRadioGroup from 'core/plugins/lbp-form-radio-group'
 import LbpFormCheckboxGroup from 'core/plugins/lbp-form-checkbox-group'
 import LbpBackground from 'core/plugins/lbp-background'
 import LbpTable from 'core/plugins/lbp-table'
-import * as Antd from 'ant-design-vue'
 
-console.log('Antd', Antd)
-let antControls = []
-antControls = Object.keys(Antd).map((s, index) => {
-  return {
-    type: 'ant',
-    i18nTitle: {
-      'en-US': Antd[s].name,
-      'zh-CN': Antd[s].name
-    },
-    title: 'antSelector',
-    icon: 'hand-pointer-o',
-    component: Antd[s],
-    visible: true,
-    name: Antd[s].name
-  }
-})
+// Note:sample code to render all ant design control
+// import * as Antd from 'ant-design-vue'
 
-console.log('antControls', antControls)
+// let antControls = []
+// antControls = Object.keys(Antd).map((s, index) => {
+//   return {
+//     type: 'ant',
+//     i18nTitle: {
+//       'en-US': Antd[s].name,
+//       'zh-CN': Antd[s].name
+//     },
+//     title: 'antSelector',
+//     icon: 'hand-pointer-o',
+//     component: Antd[s],
+//     visible: true,
+//     name: Antd[s].name
+//   }
+// })
+
+// console.log('antControls', antControls)
 
 export const pluginsList = [
   // ...antControls,
@@ -76,6 +79,17 @@ export const pluginsList = [
   },
   {
     i18nTitle: {
+      'en-US': 'basicText',
+      'zh-CN': '动态字段'
+    },
+    title: 'basicText',
+    icon: 'text-width',
+    component: basicText,
+    visible: true,
+    name: basicText.name
+  },
+  {
+    i18nTitle: {
       'en-US': 'Button',
       'zh-CN': '普通按钮'
     },
@@ -111,11 +125,11 @@ export const pluginsList = [
   }, {
     type: 'ant',
     i18nTitle: {
-      'en-US': 'antCalendar',
-      'zh-CN': 'antCalendar'
+      'en-US': 'calendar',
+      'zh-CN': 'calendar'
     },
-    title: 'antCalendar',
-    icon: 'hand-pointer-o',
+    title: 'calendar',
+    icon: 'calendar-o',
     component: antCalendar,
     visible: true,
     name: antCalendar.name

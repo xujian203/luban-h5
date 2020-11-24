@@ -1,0 +1,15 @@
+<template>
+  <component v-bind="$props" v-bind:is="`a-input`"></component>
+</template>
+<script>
+import PropTypes from '@luban-h5/plugin-common-props'
+
+export default {
+  name: 'boe-sample',
+  props: {
+    text: PropTypes.string({ label: '属性名(英文)' }),
+    placeholder: PropTypes.string({ defaultValue: 'placeholder', label: 'placeholder' }),
+    borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' })
+  }
+}
+</script>

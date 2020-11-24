@@ -73,7 +73,6 @@ export default {
     }
   },
   mounted () {
-    console.log('t', this.menus)
   },
   methods: {
     clickMenu (clickMenu) {

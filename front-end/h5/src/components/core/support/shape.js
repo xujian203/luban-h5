@@ -167,8 +167,6 @@ export default {
     }
   },
   render (h) {
-    console.log('ele', this.element)
-    console.log('this.element.pluginProps.enableResize', this.element.pluginProps.enableResize)
     return (
       <div
         tabIndex="0" xujian="xujina"

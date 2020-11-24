@@ -41,7 +41,7 @@ export default new Router({
       component: () => import('./views/Editor.vue')
     },
     {
-      path: '/preview/:workId', // #!zh 编辑器页面，核心功能部分
+      path: '/preview/:workId',
       name: 'preview',
       component: () => import('./views/preview.js')
     }

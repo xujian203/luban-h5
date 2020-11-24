@@ -4,7 +4,6 @@ import router from './router'
 import store from './store/'
 import i18n from './locales'
 import './plugins/index'
-
 new Vue({
   router,
   store,
