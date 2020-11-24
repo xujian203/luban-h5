@@ -28,46 +28,27 @@ export default {
       isLongPage: true,
       work: null,
       appContext: null,
-      pageContext: null,
+      pageContext: {},
       currentPage: null
     }
   },
   methods: {
     async onMenuClick (menu) {
-      console.log('onMenuClick', menu)
       const page = this.work.pages.find(s => s.uuid === menu.uuid)
-      if (page.dataLoadApi) {
-        this.pageContext = await axios.get(page.dataLoadApi)
-      }
-      console.log('page', page)
+      console.log('onMenuClick', page)
       if (page) {
         this.currentPage = page
       }
+      if (this.currentPage.dataLoadApi) {
+        let res = await axios.get(this.currentPage.dataLoadApi)
+        this.pageContext = res.data
+      }
     },
     renderLongPage () {
-      return this.renderPreview(this.currentPage.elements)
-    },
-    renderSwiperPage () {
-      const work = window.__work
-      return (
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            {work.pages.map(page => {
-              return (
-                <section class="swiper-slide flat">
-                  {this.renderPreview(page.elements)}
-                </section>
-              )
-            })}
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      )
-    },
-    renderPreview (pageElements = []) {
+      const pageElements = this.currentPage.elements || []
       const height = '100%'
       const elements = pageElements.map(element => new Element(element))
-      return <RenderPreview elements={elements} height={height} />
+      return <RenderPreview elements={elements} height={height} pageContext={this.pageContext} />
     },
     renderContent (work) {
       const containerStyle = this.getContainerStyle(work)
@@ -109,6 +90,10 @@ export default {
     const { data: work } = await axios.get('http://localhost:1337/works/15')
     this.work = work
     this.currentPage = work.pages[0]
+    if (this.currentPage.dataLoadApi) {
+      let res = await axios.get(this.currentPage.dataLoadApi)
+      this.pageContext = res.data
+    }
     // this.$forceUpdate()
   },
   render (h) {

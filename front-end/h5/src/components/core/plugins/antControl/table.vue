@@ -19,6 +19,7 @@ export default {
         return false
       }
     },
+    dataKey: PropTypes.string({ label: 'dataKey', defaultValue: 'list' }),
     width: PropTypes.string({ label: 'staticWidth', defaultValue: '100%' }),
     text: PropTypes.string({ label: 'dataKey' }),
     borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' }),

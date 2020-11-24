@@ -31,7 +31,7 @@ import { PAGE_MODE, PAGE_MODE_LABEL } from 'core/constants/work'
 export default {
   data () {
     return {
-      dataLoadApi: 'http://api.com',
+      dataLoadApi: 'http://localhost:1337/works/15',
       formLayout: 'vertical',
       PAGE_MODE: Object.freeze(PAGE_MODE),
       PAGE_MODE_LABEL: Object.freeze(PAGE_MODE_LABEL)
