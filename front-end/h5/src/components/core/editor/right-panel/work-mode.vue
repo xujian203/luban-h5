@@ -17,6 +17,10 @@
         </a-radio-button>
       </a-radio-group>
     </a-form-item>
+    <a-form-item label="load data api">
+      <a-input size="small" v-model="dataLoadApi" @change="changePage">
+      </a-input>
+    </a-form-item>
   </a-form>
 </template>
 
@@ -27,13 +31,21 @@ import { PAGE_MODE, PAGE_MODE_LABEL } from 'core/constants/work'
 export default {
   data () {
     return {
+      dataLoadApi: 'http://api.com',
       formLayout: 'vertical',
       PAGE_MODE: Object.freeze(PAGE_MODE),
       PAGE_MODE_LABEL: Object.freeze(PAGE_MODE_LABEL)
     }
   },
+  mounted () {
+    // TODO:load data from api.
+    console.log('this.editingPage', this.editingPage)
+    if (this.editingPage.dataLoadApi) {
+      this.dataLoadApi = this.editingPage.dataLoadApi
+    }
+  },
   computed: {
-    ...mapState('editor', ['work']),
+    ...mapState('editor', ['work', 'editingPage']),
     // 翻页模式、长页面模式
     // src/constants/work -> PAGE_MODE
     // https://vuex.vuejs.org/zh/guide/forms.html#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7
@@ -49,7 +61,10 @@ export default {
   methods: {
     ...mapActions('editor', [
       'updateWork'
-    ])
+    ]),
+    changePage () {
+      this.editingPage.dataLoadApi = this.dataLoadApi
+    }
   }
 }
 </script>

@@ -48,6 +48,7 @@ export default {
   /* width: 75px; */
   width: 101%;
   height: 70px;
+  padding: 4px;
   margin-top: -1px;
   margin-left: -1px;
   display: flex;
@@ -61,5 +62,4 @@ export default {
   color: rgb(91, 107, 115);
   cursor: pointer;
 }
-/* <script> */
 </style>

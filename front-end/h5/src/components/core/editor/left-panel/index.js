@@ -1,4 +1,4 @@
-import RenderShortcutsPanel from './shortcuts-panel/index'
+import RenderShortcutsPanel from './shortcuts-panel/index.vue'
 import RenderPageManager from './page-manager/index'
 import RenderPageTree from './page-tree/index'
 

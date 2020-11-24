@@ -24,6 +24,9 @@ export default {
       )
     }
   },
+  mounted () {
+    console.log('preview loaded')
+  },
   render (h) {
     return this.renderPreview(h, this.elements)
   }

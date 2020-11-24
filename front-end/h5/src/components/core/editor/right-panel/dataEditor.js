@@ -93,15 +93,18 @@ export default {
       this.editingElement.pluginProps._dataSource = JSON.parse(this.editingItem)
     }
   },
+  mounted () {
+    if (this.editingElement.pluginProps._dataSource) {
+      this.editingItem = JSON.stringify(this.editingElement.pluginProps._dataSource)
+    }
+  },
   render (h) {
     const ele = this.editingElement
     let code = this.editingItem
-    if (this.editingElement.pluginProps._dataSource) {
-      code = JSON.stringify(this.editingElement.pluginProps._dataSource)
-    }
+
     if (!ele) return (<span>{this.$t('editor.editPanel.common.empty')}</span>)
     return <div>
-      <a-button onClick={this.mixinScript} >使用样式</a-button>
+      <a-button onClick={this.mixinScript} >应用设置</a-button>
       <div style={{ margin: '20px' }}></div>
       <a-textarea
         rows={36}

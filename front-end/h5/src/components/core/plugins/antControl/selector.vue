@@ -1,10 +1,7 @@
 <template>
   <component v-bind="$props" v-bind:is="`a-select`" :style="_style">
-    <a-select-option value="jack">
-      Jack
-    </a-select-option>
-    <a-select-option value="lucy">
-      Lucy
+    <a-select-option :key="index" :value="option.value" v-for="(option,index) in _dataSource">
+      {{option.label}}
     </a-select-option>
   </component>
 </template>
@@ -18,7 +15,17 @@ export default {
     text: PropTypes.string({ label: 'dataKey' }),
     placeholder: PropTypes.string({ defaultValue: 'placeholder', label: 'placeholder' }),
     borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' }),
-    _style: Object
+    _style: Object,
+    _dataSource:
+    {
+      type: Array,
+      default: function () {
+        return [
+          { label: 'a', value: 1 },
+          { label: 'bv', value: 2 }
+        ]
+      }
+    }
   }
 }
 </script>

@@ -26,6 +26,7 @@ export const pluginsList = [
     icon: 'photo',
     component: LbpPicture,
     visible: true,
+
     name: LbpPicture.name
   },
   {
@@ -55,6 +56,7 @@ export const pluginsList = [
       'en-US': 'input2',
       'zh-CN': 'ant-input'
     },
+    type: 'ant',
     title: 'ant-input',
     icon: 'hand-pointer-o',
     component: antInput2,
@@ -62,6 +64,7 @@ export const pluginsList = [
     name: antInput2.name
   },
   {
+    type: 'ant',
     i18nTitle: {
       'en-US': 'antSelector',
       'zh-CN': 'antSelector'
@@ -73,6 +76,7 @@ export const pluginsList = [
     name: antSelector.name
   },
   {
+    type: 'ant',
     i18nTitle: {
       'en-US': 'antRow',
       'zh-CN': 'antRow'
@@ -83,6 +87,7 @@ export const pluginsList = [
     visible: true,
     name: antRow.name
   }, {
+    type: 'ant',
     i18nTitle: {
       'en-US': 'antColumn',
       'zh-CN': 'antColumn'
@@ -105,6 +110,7 @@ export const pluginsList = [
     name: searchSection.name
   },
   {
+    type: 'ant',
     i18nTitle: {
       'en-US': 'Button',
       'zh-CN': 'ant按钮'
@@ -184,6 +190,7 @@ export const pluginsList = [
     }
   },
   {
+    type: 'ant',
     i18nTitle: {
       'en-US': 'Table',
       'zh-CN': 'Ant表格'

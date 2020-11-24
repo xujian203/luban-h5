@@ -28,8 +28,6 @@ export default {
       type: Object,
       default: function () {
         return {
-          // wdith: 'auto !important',
-          // margin: '10px',
           padding: '10px'
         }
       }
