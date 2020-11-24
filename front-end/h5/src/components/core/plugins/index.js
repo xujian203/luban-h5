@@ -3,6 +3,7 @@ import LbpButton from 'core/plugins/lbp-button'
 import antButton from 'core/plugins/antControl/button'
 import antInput2 from 'core/plugins/antControl/input.vue'
 import antTable from 'core/plugins/antControl/table.vue'
+import antCalendar from 'core/plugins/antControl/calendar.vue'
 import antRow from 'core/plugins/antControl/row.vue'
 import antColumn from 'core/plugins/antControl/column.vue'
 import antSelector from 'core/plugins/antControl/selector.vue'
@@ -107,6 +108,17 @@ export const pluginsList = [
     component: antSelector,
     visible: true,
     name: antSelector.name
+  }, {
+    type: 'ant',
+    i18nTitle: {
+      'en-US': 'antCalendar',
+      'zh-CN': 'antCalendar'
+    },
+    title: 'antCalendar',
+    icon: 'hand-pointer-o',
+    component: antCalendar,
+    visible: true,
+    name: antCalendar.name
   },
   {
     type: 'ant',

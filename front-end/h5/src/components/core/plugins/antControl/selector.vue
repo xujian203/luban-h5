@@ -6,7 +6,6 @@
   </component>
 </template>
 <script>
-// https://github.com/luban-h5-components/plugin-common-props
 import PropTypes from '@luban-h5/plugin-common-props'
 
 export default {

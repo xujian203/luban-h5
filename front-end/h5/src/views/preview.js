@@ -27,13 +27,18 @@ export default {
     return {
       isLongPage: true,
       work: null,
+      appContext: null,
+      pageContext: null,
       currentPage: null
     }
   },
   methods: {
-    onMenuClick (menu) {
+    async onMenuClick (menu) {
       console.log('onMenuClick', menu)
       const page = this.work.pages.find(s => s.uuid === menu.uuid)
+      if (page.dataLoadApi) {
+        this.pageContext = await axios.get(page.dataLoadApi)
+      }
       console.log('page', page)
       if (page) {
         this.currentPage = page
