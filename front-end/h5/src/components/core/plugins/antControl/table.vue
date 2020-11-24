@@ -1,5 +1,5 @@
 <template>
-  <component v-bind="$props" v-bind:is="`a-table`" :style="_style" height="50vh" :columns="_columns" :data-source="_dataSource" :scroll="{y: '50vh' }"></component>
+  <component v-bind="$props" v-bind:is="`a-table`" :style="style" height="50vh" :columns="_columns" :data-source="_dataSource" :scroll="{y: '50vh' }"></component>
 </template>
 <script>
 import PropTypes from '@luban-h5/plugin-common-props'
@@ -23,7 +23,7 @@ export default {
     text: PropTypes.string({ label: 'dataKey' }),
     borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' }),
     _columns: Array,
-    _style:
+    style:
     {
       type: Object,
       default: function () {

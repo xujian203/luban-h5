@@ -1,5 +1,5 @@
 <template>
-  <component v-bind="$props" v-bind:is="`a-select`" :style="_style">
+  <component v-bind="$props" v-bind:is="`a-select`">
     <a-select-option :key="index" :value="option.value" v-for="(option,index) in _dataSource">
       {{option.label}}
     </a-select-option>
@@ -15,7 +15,6 @@ export default {
     text: PropTypes.string({ label: 'dataKey' }),
     placeholder: PropTypes.string({ defaultValue: 'placeholder', label: 'placeholder' }),
     borderColor: PropTypes.color({ label: '边框颜色', defaultValue: '#ced4da' }),
-    _style: Object,
     _dataSource:
     {
       type: Array,

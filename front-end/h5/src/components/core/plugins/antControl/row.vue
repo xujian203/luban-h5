@@ -1,5 +1,5 @@
 <template>
-  <component v-bind="$props" v-bind:is="`a-row`" :style="_style">
+  <component v-bind="$props" v-bind:is="`a-row`" :style="style">
     <!-- <a-col :span="24"></a-col> -->
   </component>
 </template>
@@ -18,7 +18,7 @@ export default {
     },
     type: PropTypes.string({ label: 'type', defaultValue: 'flex' }),
     width: PropTypes.string({ label: 'staticWidth', defaultValue: '100%' }),
-    _style:
+    style:
     {
       type: Object,
       default: function () {

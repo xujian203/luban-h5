@@ -2,7 +2,7 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   data: () => ({
-    editingStyle: `{"color":"red","font-size":"20px"}`
+    editingStyle: `{"color":"red","font-size":"20px","backgroud":"yellow"}`
   }),
   computed: {
     ...mapState('editor', [
@@ -15,7 +15,7 @@ export default {
     ]),
     mixinScript () {
       console.log('this.editingElement', this.editingElement)
-      this.editingElement.pluginProps._style = JSON.parse(this.editingStyle)
+      this.editingElement.pluginProps.style = JSON.parse(this.editingStyle)
     }
   },
   render (h) {
