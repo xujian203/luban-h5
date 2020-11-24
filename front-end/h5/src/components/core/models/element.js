@@ -17,7 +17,7 @@ const defaultStyle = {
 }
 
 class Element {
-  constructor (ele) {
+  constructor(ele) {
     this.name = ele.name
     this.uuid = ele.uuid || +new Date()
     /**
@@ -77,7 +77,6 @@ class Element {
   }
 
   getElementResizeBlockWidth (elementWidth, isRem) {
-    console.log('elementWidth', elementWidth)
     if (`${elementWidth}`.includes('%')) {
       return elementWidth
     } else {

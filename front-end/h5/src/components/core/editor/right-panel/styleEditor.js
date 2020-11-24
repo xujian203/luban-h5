@@ -2,7 +2,7 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   data: () => ({
-    editingStyle: `{"color":"red","font-size":"20px","backgroud":"yellow"}`
+    editingStyle: `{"color":"red","font-size":"20px","background":"#ececec"}`
   }),
   computed: {
     ...mapState('editor', [
@@ -13,7 +13,7 @@ export default {
     ...mapActions('editor', [
       'setEditingElement'
     ]),
-    mixinScript () {
+    applyChanging () {
       console.log('this.editingElement', this.editingElement)
       this.editingElement.pluginProps.style = JSON.parse(this.editingStyle)
     }
@@ -22,7 +22,7 @@ export default {
     const ele = this.editingElement
     if (!ele) return (<span>{this.$t('editor.editPanel.common.empty')}</span>)
     return <div>
-      <a-button onClick={this.mixinScript} >使用样式</a-button>
+      <a-button onClick={this.applyChanging} >使用样式</a-button>
       <div style={{ margin: '20px' }}></div>
       <a-textarea
         rows={36}

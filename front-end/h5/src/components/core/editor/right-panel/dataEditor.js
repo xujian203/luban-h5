@@ -17,62 +17,62 @@ export default {
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '3',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '4',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '5',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '6',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '7',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '8',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       }, {
-        key: '2',
+        key: '9',
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
         tags: ['loser']
       },
       {
-        key: '3',
+        key: '10',
         name: 'Joe Black',
         age: 32,
         address: 'Sidney No. 1 Lake Park',
         tags: ['cool', 'teacher']
       }, {
-        key: '3',
+        key: '11',
         name: 'Joe Black2',
         age: 32,
         address: 'Sidney No. 1 Lake Park',
         tags: ['cool', 'teacher']
       }, {
-        key: '3',
+        key: '12',
         name: 'Joe Black3',
         age: 32,
         address: 'Sidney No. 1 Lake Park',

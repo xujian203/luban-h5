@@ -1,5 +1,5 @@
 <template>
-  <component v-bind="$props" v-bind:is="`a-row`" :style="style">
+  <component v-bind="$props" v-bind:is="`a-row`" style="padding:10px">
     <a-col :span="18" style="margin-bottom:10px;text-align:left;">
       <span>会议室名称：</span>
       <a-input placehoder="请输入关键字" style="width:20vw"></a-input>
@@ -35,7 +35,7 @@ export default {
     type: PropTypes.string({ label: 'type', defaultValue: 'flex' }),
     width: PropTypes.string({ label: 'staticWidth', defaultValue: '100%' }),
     height: PropTypes.string({ label: 'staticHeight', defaultValue: 'auto' }),
-    style:
+    _style:
     {
       type: Object,
       default: function () {

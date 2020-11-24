@@ -15,23 +15,26 @@ import LbpFormRadioGroup from 'core/plugins/lbp-form-radio-group'
 import LbpFormCheckboxGroup from 'core/plugins/lbp-form-checkbox-group'
 import LbpBackground from 'core/plugins/lbp-background'
 import LbpTable from 'core/plugins/lbp-table'
-import { Button } from 'ant-design-vue'
+import * as Antd from 'ant-design-vue'
 
-// let antControls = []
-// antControls = Object.keys(Antd).map((s, index) => {
-//   return {
-//     type: 'ant',
-//     i18nTitle: {
-//       'en-US': Antd[s].name,
-//       'zh-CN': Antd[s].name
-//     },
-//     title: 'antSelector',
-//     icon: 'hand-pointer-o',
-//     component: Antd[s],
-//     visible: true,
-//     name: Antd[s].name
-//   }
-// })
+console.log('Antd', Antd)
+let antControls = []
+antControls = Object.keys(Antd).map((s, index) => {
+  return {
+    type: 'ant',
+    i18nTitle: {
+      'en-US': Antd[s].name,
+      'zh-CN': Antd[s].name
+    },
+    title: 'antSelector',
+    icon: 'hand-pointer-o',
+    component: Antd[s],
+    visible: true,
+    name: Antd[s].name
+  }
+})
+
+console.log('antControls', antControls)
 
 export const pluginsList = [
   // ...antControls,
@@ -47,18 +50,18 @@ export const pluginsList = [
 
     name: LbpPicture.name
   },
-  {
-    type: 'ant',
-    title: 'Button',
-    i18nTitle: {
-      'en-US': 'Button',
-      'zh-CN': 'Button'
-    },
-    icon: 'photo',
-    component: Button,
-    visible: true,
-    name: Button.name
-  },
+  // {
+  //   type: 'ant',
+  //   title: 'Button',
+  //   i18nTitle: {
+  //     'en-US': 'Button',
+  //     'zh-CN': 'Button'
+  //   },
+  //   icon: 'photo',
+  //   component: Button,
+  //   visible: true,
+  //   name: Button.name
+  // },
   {
     i18nTitle: {
       'en-US': 'Text',
