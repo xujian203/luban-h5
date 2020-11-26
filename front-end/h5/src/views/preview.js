@@ -87,7 +87,9 @@ export default {
     }
   },
   async mounted () {
-    const { data: work } = await axios.get('http://localhost:1337/works/15')
+    console.log('this.$route', this.$route)
+    const appId = this.$route.params.id
+    const { data: work } = await axios.get(`/works/${appId}`)
     this.work = work
     this.currentPage = work.pages[0]
     if (this.currentPage.dataLoadApi) {

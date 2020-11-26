@@ -18,7 +18,7 @@ export default {
             elements.map((element, index) => {
               console.log('element', element)
               if (element.pluginProps.dataKey) {
-                element.pluginProps._dataSource = pageContext[element.pluginProps.dataKey]
+                // element.pluginProps._dataSource = pageContext[element.pluginProps.dataKey]
               }
               return <node-wrapper element={element}>
                 {h(element.name, element.getPreviewData({ position: 'static' }))}

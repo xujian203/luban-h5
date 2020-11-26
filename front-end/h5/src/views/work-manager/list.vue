@@ -9,15 +9,15 @@ const ListItemCard = {
   props: {
     work: {
       type: Object,
-      default: () => {}
+      default: () => { }
     },
     handleClickEdit: {
       type: Function,
-      default: () => {}
+      default: () => { }
     },
     handleClickPreview: {
       type: Function,
-      default: () => {}
+      default: () => { }
     }
   },
   data: () => ({
@@ -46,7 +46,7 @@ const ListItemCard = {
           {/** 编辑 */}
           <a-tooltip effect="dark" placement="bottom" title={this.$t('workCard.edit')}>
             <router-link to={{ name: 'editor', params: { workId: this.work.id } }} target="_blank">
-              <a-icon type="edit" title={this.$t('workCard.edit')}/>
+              <a-icon type="edit" title={this.$t('workCard.edit')} />
             </router-link>
           </a-tooltip>
           {/** 预览 */}
@@ -84,7 +84,7 @@ const AddNewCard = {
   render (h, { props, parent }) {
     return (
       <a-card hoverable>
-        <div slot="cover" class="flex-center" style="height: 405px;background: #f7f5f557;" onClick={props.handleCreate}>
+        <div slot="cover" class="flex-center" style="height: 105px;background: #f7f5f557;" onClick={props.handleCreate}>
           <a-icon type="plus" />
         </div>
         <template class="ant-card-actions" slot="actions">
@@ -129,7 +129,7 @@ export default {
           {
             this.fetchWorks_loading
               ? <a-col span={18} style="margin-bottom: 10px;text-align: center;height: 355px;line-height: 355px;border-bottom: 1px solid #ebedf0;background: rgba(255, 255, 255, 0.5);">
-                <a-spin tip="作品列表获取中..."/>
+                <a-spin tip="作品列表获取中..." />
               </a-col>
               : this.works.map(work => (
                 <a-col span={6} key={work.id} style="margin-bottom: 20px;">

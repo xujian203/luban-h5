@@ -5,7 +5,8 @@
         </svg></a><span class="Tooltip Ellipsis isnt-truncated" data-type="app">sample</span></div>
     <div class="toolbar-center">
       <div><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon save-icon" data-original-title="" title="">
-          <div class="toolbar-icon-wrapper"><svg class="icon" width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <div class="toolbar-icon-wrapper" @click="handleSave">
+            <svg class="icon" width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <clipPath id="clipPath4">
                   <rect x="0" y="6.2" width="18" height="10"></rect>
@@ -23,7 +24,8 @@
                   </g>
                 </g>
               </g>
-            </svg></div><span type="tip">Save</span>
+            </svg>
+          </div><span type="tip">Save</span>
         </a><a class="styles__StyledToolBarIcon-sc-14vwrn7-0 iGuLFS toolbar-icon">
           <div class="toolbar-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon icon" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6.63 4.386h3.81c3.483 0 5.225 2.436 5.225 5.283 0 2.847-1.742 5.294-5.225 5.294H4.345v-1.765l6.095.017c1.693 0 3.483-.887 3.483-3.54S12.133 6.14 10.44 6.14H6.63v2.502a.87.87 0 0 1-1.44.657L1.291 5.915a.87.87 0 0 1 0-1.315L5.19 1.215a.87.87 0 0 1 1.442.658v2.513z"></path>
@@ -216,7 +218,7 @@ export default {
       })
     },
     handleSave () {
-      this.saveWork({ isSaveCover: true })
+      this.saveWork({ successMsg: '保存成功' })
     },
     handlePublish () {
       this.updateWork({ is_publish: true })

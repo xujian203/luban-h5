@@ -41,7 +41,7 @@ export default new Router({
       component: () => import('./views/Editor.vue')
     },
     {
-      path: '/preview/:workId',
+      path: '/preview/:id',
       name: 'preview',
       component: () => import('./views/preview.js')
     }
