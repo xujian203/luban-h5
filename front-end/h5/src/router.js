@@ -44,6 +44,23 @@ export default new Router({
       path: '/preview/:id',
       name: 'preview',
       component: () => import('./views/preview.js')
+    },
+    {
+      path: '/webapp/:id',
+      name: 'webapp',
+      component: () => import('./views/webApp/appMain.vue'),
+      children: [
+        {
+          path: 'login',
+          name: 'webap-login',
+          component: () => import('@/views/webApp/login.vue')
+        },
+        {
+          path: 'route',
+          name: 'web-pap-route',
+          component: () => import('@/views/preview.js')
+        }
+      ]
     }
   ]
 })

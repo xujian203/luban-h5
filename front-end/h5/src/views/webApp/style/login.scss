@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .logo {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    backface-visibility: hidden;
+  }
+  .center-block {
+    border-radius: 10px;
+    height: 60vh;
+    display: flex;
+    .left-part {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      width: 632px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+    }
+    .right-part {
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+}
+
+.login-title {
+  font-size: 48px;
+  color: #fff;
+}
+.login-des {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.login-container {
+  min-height: 100%;
+  background-color: #fff;
+  background-size: cover;
+  overflow-y: auto;
+
+  .login-form {
+    position: relative;
+    width: 520px;
+    max-width: 100%;
+    padding: 14vh 35px 0;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .title-container {
+    position: relative;
+
+    .title {
+      font-size: 26px;
+      margin: 0px auto 40px auto;
+      text-align: center;
+    }
+  }
+
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+::v-deep .el-form-item.is-error .el-input__inner:focus {
+  border: 1px solid #d4dee7;
+}
+::v-deep.el-message {
+  min-width: 200px;
+}
+::v-deep .el-input__inner {
+  background: transparent !important;
+  -webkit-appearance: none;
+  border: 1px solid #d4dee7;
+  padding: 12px 5px 12px 15px;
+  height: 47px;
+}
+
+.login-container {
+  .el-input {
+    display: inline-block;
+    height: 47px;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .el-form-item {
+    // border: 1px solid #d4dee7;
+    border-radius: 5px;
+    color: #454545;
+  }
+}
