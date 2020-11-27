@@ -11,7 +11,8 @@ import sidebar from '../components/core/editor/masterPage/sidebar.vue'
 import { pluginsList } from 'core/plugins/index.js'
 Vue.config.productionTip = true
 Vue.prototype.$message = message
-
+Vue.prototype.$runtime = true
+Vue.prototype.$pageContext = {}
 const install = function () {
   pluginsList.forEach(plugin => {
     Vue.component(plugin.name, plugin.component)
@@ -41,7 +42,7 @@ export default {
       }
       if (this.currentPage.dataLoadApi) {
         let res = await axios.get(this.currentPage.dataLoadApi)
-        this.pageContext = res.data
+        Vue.prototype.$pageContext = this.pageContext = res.data
       }
     },
     renderLongPage () {
@@ -94,7 +95,7 @@ export default {
     this.currentPage = work.pages[0]
     if (this.currentPage.dataLoadApi) {
       let res = await axios.get(this.currentPage.dataLoadApi)
-      this.pageContext = res.data
+      Vue.prototype.$pageContext = this.pageContext = res.data
     }
     // this.$forceUpdate()
   },

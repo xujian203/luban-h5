@@ -1,6 +1,6 @@
 <template>
   <div style="width: 100%">
-    <div style="height:60px;color:#fff;display:flex;justify-content:center;align-items:center">LOGO</div>
+    <div style="height:60px;color:#fff;display:flex;justify-content:center;align-items:center">BOE 园区运营管理平台</div>
     <!-- <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
       <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
     </a-button> -->

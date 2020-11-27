@@ -33,8 +33,10 @@ export default {
   },
   methods: {
     async handleClick () {
-      const result = await axios[this.method](this.api)
-      console.log(result)
+      if (this.$runtime) {
+        const result = await axios[this.method](this.api, this.$pageContext)
+        console.log(result)
+      }
     }
   },
   clickProps: {
