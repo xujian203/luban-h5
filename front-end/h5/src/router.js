@@ -51,14 +51,26 @@ export default new Router({
       component: () => import('./views/webApp/appMain.vue'),
       children: [
         {
-          path: 'login',
+          path: '',
           name: 'webap-login',
           component: () => import('@/views/webApp/login.vue')
         },
         {
           path: 'route',
-          name: 'web-pap-route',
-          component: () => import('@/views/preview.js')
+          name: 'web-app-route',
+          component: () => import('@/views/webApp/masterPage.js'),
+          children: [
+            {
+              path: ':pageId',
+              name: 'dynamic-page',
+              component: () => import('@/views/webApp/dynamicWebPage.js')
+            },
+            {
+              path: '',
+              name: 'dynamic-page',
+              component: () => import('@/views/webApp/dynamicWebPage.js')
+            }
+          ]
         }
       ]
     }
