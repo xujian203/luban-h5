@@ -33,6 +33,15 @@ export default {
       currentPage: null
     }
   },
+  watch: {
+    $route (to, from) {
+      console.log(to)
+      if (to.params.pageId) {
+        const pageId = to.params.pageId
+        this.currentPage = pageId ? this.work.pages.find(s => s.uuid === pageId) : this.work.pages[0]
+      }
+    }
+  },
   methods: {
     renderWithMaster (work) {
       const containerStyle = this.getContainerStyle(work)

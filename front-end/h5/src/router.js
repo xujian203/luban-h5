@@ -56,7 +56,7 @@ export default new Router({
           component: () => import('@/views/webApp/login.vue')
         },
         {
-          path: 'route',
+          path: 'route/',
           name: 'web-app-route',
           component: () => import('@/views/webApp/masterPage.js'),
           children: [
@@ -64,12 +64,12 @@ export default new Router({
               path: ':pageId',
               name: 'dynamic-page',
               component: () => import('@/views/webApp/dynamicWebPage.js')
-            },
-            {
-              path: '',
-              name: 'dynamic-page',
-              component: () => import('@/views/webApp/dynamicWebPage.js')
             }
+            // {
+            //   path: '',
+            //   name: 'dynamic-home',
+            //   component: () => import('@/views/webApp/dynamicWebPage.js')
+            // }
           ]
         }
       ]

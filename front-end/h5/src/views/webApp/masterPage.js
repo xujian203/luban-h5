@@ -40,6 +40,7 @@ export default {
       if (page) {
         this.currentPage = page
       }
+      this.$router.push({ name: 'dynamic-page', params: { pageId: page.uuid } })
 
       // if (this.currentPage.dataLoadApi) {
       //   let res = await axios.get(this.currentPage.dataLoadApi)
@@ -79,13 +80,6 @@ export default {
         height: '100%'
       }
       return containerStyle
-    },
-    renderUnPublishTip () {
-      return (
-        <div style="box-sizing: border-box;min-height: 568px;line-height: 568px;text-align: center;">
-          页面可能暂未发布
-        </div>
-      )
     }
   },
   async mounted () {
@@ -98,7 +92,6 @@ export default {
       let res = await axios.get(this.currentPage.dataLoadApi)
       Vue.prototype.$pageContext = this.pageContext = res.data
     }
-    // this.$forceUpdate()
   },
   render (h) {
     const { work } = this
@@ -106,12 +99,6 @@ export default {
     if (!work) {
       return <div></div>
     }
-    // const work = window.__work
-
-    // 预览模式 或者 已经发布 的页面可以正常渲染，否则提示用户暂未发布
-    // const query = new URLSearchParams(window.location.search)
-    // const canRender = query.get('view_mode') === 'preview' || work.is_publish
-    // if (!canRender) return this.renderUnPublishTip()
 
     return this.renderWithMaster(work)
   }
